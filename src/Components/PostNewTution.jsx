@@ -120,7 +120,6 @@ const PostNewTuition = () => {
               )}
             </div>
 
-            {/* Salary */}
             <div className="space-y-2">
               <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1 flex items-center gap-2">
                 <FaMoneyBillWave className="text-emerald-500" /> Salary (BDT)
