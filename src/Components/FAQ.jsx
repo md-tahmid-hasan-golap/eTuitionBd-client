@@ -44,7 +44,6 @@ const FAQ = () => {
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
             <span className="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-              {/* আইকনটি এখানে সঠিকভাবে কল করা হয়েছে */}
               <FaQuestionCircle /> FAQ Center
             </span>
           </div>
