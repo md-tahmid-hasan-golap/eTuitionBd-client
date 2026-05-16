@@ -16,7 +16,6 @@ const ErrorPage = () => {
 
   return (
     <div className="min-h-screen bg-[#F3F7FB] flex flex-col items-center justify-center p-6 font-sans">
-      {/* Content Wrapper */}
       <div className="flex flex-col items-center justify-center gap-8 md:gap-12 w-full max-w-5xl text-center">
         {/* Lottie Animation */}
         <MotionDiv
@@ -35,7 +34,9 @@ const ErrorPage = () => {
         {/* Error Info */}
         <div className="space-y-4">
           <h1 className="text-4xl font-bold text-gray-800">Oops!</h1>
-          <p className="text-xl text-gray-600">Sorry, an unexpected error has occurred.</p>
+          <p className="text-xl text-gray-600">
+            Sorry, an unexpected error has occurred.
+          </p>
           {error && (
             <p className="text-gray-500 italic">
               {error.statusText || error.message}
