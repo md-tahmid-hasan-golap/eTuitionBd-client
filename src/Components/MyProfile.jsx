@@ -55,7 +55,6 @@ const MyProfile = () => {
     const bio = form.bio.value;
 
     try {
-      // 1. Update Firebase Auth Profile (Name and Photo)
       await updateUserProfile({ displayName: name, photoURL: photo });
 
       // 2. Update Database Profile
@@ -73,19 +72,27 @@ const MyProfile = () => {
   };
 
   const roleColor =
-    role?.toLowerCase() === "tutor" ? "text-blue-600 bg-blue-50" : "text-orange-600 bg-orange-50";
-  const badgeColor = role?.toLowerCase() === "tutor" ? "bg-blue-500" : "bg-orange-500";
+    role?.toLowerCase() === "tutor"
+      ? "text-blue-600 bg-blue-50"
+      : "text-orange-600 bg-orange-50";
+  const badgeColor =
+    role?.toLowerCase() === "tutor" ? "bg-blue-500" : "bg-orange-500";
 
   return (
     <div className="min-h-screen bg-[#fcfcfd] py-12 px-6 relative">
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
-        <div className="mb-10 flex justify-between items-end" data-aos="fade-down">
+        <div
+          className="mb-10 flex justify-between items-end"
+          data-aos="fade-down"
+        >
           <div>
             <h2 className="text-3xl font-black text-[#0f172a] tracking-tight">
               My <span className="text-orange-500">Profile</span>
             </h2>
-            <p className="text-slate-500 font-medium mt-1">Manage your personal information.</p>
+            <p className="text-slate-500 font-medium mt-1">
+              Manage your personal information.
+            </p>
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
@@ -109,7 +116,10 @@ const MyProfile = () => {
                     className={`absolute inset-0 ${badgeColor} rounded-full blur-xl opacity-20 transition-opacity`}
                   ></div>
                   <img
-                    src={user?.photoURL || "https://i.ibb.co/vBR649p/user-placeholder.png"}
+                    src={
+                      user?.photoURL ||
+                      "https://i.ibb.co/vBR649p/user-placeholder.png"
+                    }
                     alt="Profile"
                     className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md relative z-10"
                   />
@@ -156,15 +166,18 @@ const MyProfile = () => {
                   <div className="mt-8 space-y-6 pt-6 border-t border-slate-100">
                     <div>
                       <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-2">
-                        <FaGraduationCap className="text-blue-500" /> Qualifications
+                        <FaGraduationCap className="text-blue-500" />{" "}
+                        Qualifications
                       </h4>
                       <p className="text-sm font-medium text-slate-700 bg-slate-50 p-4 rounded-xl">
-                        {dbUser?.qualifications || "No qualifications added yet."}
+                        {dbUser?.qualifications ||
+                          "No qualifications added yet."}
                       </p>
                     </div>
                     <div>
                       <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-2">
-                        <FaInfoCircle className="text-orange-500" /> Bio / About Me
+                        <FaInfoCircle className="text-orange-500" /> Bio / About
+                        Me
                       </h4>
                       <p className="text-sm font-medium text-slate-700 bg-slate-50 p-4 rounded-xl leading-relaxed">
                         {dbUser?.bio || "Write a short bio about yourself..."}
@@ -185,7 +198,9 @@ const MyProfile = () => {
             className="bg-white w-full max-w-lg p-8 rounded-[2.5rem] shadow-2xl relative animate-in fade-in zoom-in duration-300 my-auto"
             data-aos="zoom-in"
           >
-            <h3 className="text-2xl font-black text-[#0f172a] mb-2">Update Profile</h3>
+            <h3 className="text-2xl font-black text-[#0f172a] mb-2">
+              Update Profile
+            </h3>
             <p className="text-slate-500 text-sm mb-6">
               Change your personal and professional details.
             </p>
@@ -297,7 +312,9 @@ const MyProfile = () => {
 // Reusable Info Component
 const InfoBox = ({ icon, label, value, color = "text-[#0f172a]" }) => (
   <div className="space-y-1">
-    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">{label}</p>
+    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">
+      {label}
+    </p>
     <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl border border-transparent">
       <span className="text-orange-500 text-lg">{icon}</span>
       <p className={`font-bold text-sm truncate ${color}`}>{value}</p>
