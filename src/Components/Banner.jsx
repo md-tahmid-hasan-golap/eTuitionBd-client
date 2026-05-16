@@ -89,7 +89,6 @@ const Banner = () => {
         ))}
       </Swiper>
 
-      {/* Modern UI Customization */}
       <style jsx global>{`
         .swiper-button-next,
         .swiper-button-prev {
