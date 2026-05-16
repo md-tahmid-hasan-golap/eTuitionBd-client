@@ -26,7 +26,6 @@ const TutorsCard = ({ tutor }) => {
 
   return (
     <>
-      {/* CARD */}
       <div className="group w-full bg-white rounded-[2rem] sm:rounded-[2.5rem] p-4 sm:p-6 shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-orange-200 relative overflow-hidden h-full flex flex-col min-h-0">
         {/* Decorative Gradient */}
         <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-orange-500/5 rounded-full -mr-12 sm:-mr-16 -mt-12 sm:-mt-16 group-hover:bg-orange-500/10 transition-colors"></div>
