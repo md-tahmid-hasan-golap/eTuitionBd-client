@@ -18,7 +18,7 @@ const ErrorPage = () => {
     <div className="min-h-screen bg-[#F3F7FB] flex flex-col items-center justify-center p-6 font-sans">
       {/* Content Wrapper */}
       <div className="flex flex-col items-center justify-center gap-8 md:gap-12 w-full max-w-5xl text-center">
-        {/* Lottie Animation */}
+        {/* Lottie  */}
         <MotionDiv
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
