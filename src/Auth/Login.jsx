@@ -29,7 +29,7 @@ const Login = () => {
     setLoading(true);
     try {
       await signInUser(data.email, data.password);
-      
+
       // Fetch role to determine redirect path
       const roleRes = await axiosPublic.get(`/user/role/${data.email}`);
       const role = roleRes.data?.role?.toLowerCase();
@@ -54,7 +54,7 @@ const Login = () => {
     try {
       const result = await signInWithGoogle();
       const user = result.user;
-      
+
       const userInfo = {
         name: user.displayName,
         email: user.email,
@@ -62,16 +62,16 @@ const Login = () => {
         role: "student",
       };
       // Save or update user in DB
-      await axiosPublic.post('/users', userInfo);
+      await axiosPublic.post("/users", userInfo);
 
       // Fetch role for Google user
       const roleRes = await axiosPublic.get(`/user/role/${user.email}`);
       const role = roleRes.data?.role?.toLowerCase();
 
       toast.success("Login with Google Successful! 🚀");
-      
+
       // Redirect Logic — always go to home, unless bounced from a protected page
-      navigate(from, { replace: true });
+      navigate("/");
     } catch (error) {
       toast.error(error.message);
     }
