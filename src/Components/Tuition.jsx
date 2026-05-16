@@ -12,7 +12,6 @@ const Tuition = ({ data }) => {
   return (
     <section className="bg-white py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header with Title and "See All" Button */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
           <div className="text-center md:text-left">
             <h2 className="text-3xl md:text-5xl font-black text-[#0f172a] tracking-tight italic">
