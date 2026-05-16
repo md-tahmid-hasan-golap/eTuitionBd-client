@@ -70,7 +70,6 @@ const Login = () => {
 
       toast.success("Login with Google Successful! 🚀");
 
-      // Redirect Logic — always go to home, unless bounced from a protected page
       navigate("/");
     } catch (error) {
       toast.error(error.message);
