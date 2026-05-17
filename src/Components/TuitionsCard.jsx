@@ -38,7 +38,7 @@ const TuitionsCard = ({ tution, tuition, isDashboard, handleDelete }) => {
         </div>
       </div>
 
-      {/* Main Title Section */}
+      {/* Main Title  */}
       <div className="mb-4">
         <h3 className="text-2xl font-black text-[#0f172a] group-hover:text-blue-700 transition-colors duration-300 leading-tight">
           {subject}
