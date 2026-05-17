@@ -29,7 +29,7 @@ const Spinner = ({ text = "Preparing your dashboard..." }) => {
           </p>
         </div>
 
-        {/* Professional Loading Dots */}
+        {/* Professional Loading  */}
         <div className="flex gap-2 mt-6 md:mt-8">
           {[0, 1, 2].map((i) => (
             <span
