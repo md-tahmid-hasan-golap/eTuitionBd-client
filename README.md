@@ -6,6 +6,12 @@ eTuitionBd is a premium full-stack tuition management application that connects 
 
 [eTuitionBd Live URL](https://e-tuition-bd-client-eight.vercel.app)
 
+Clone the Server Side:
+
+```bash
+git clone https://github.com/md-tahmid-hasan-golap/eTuitionBd-server
+```
+
 ## Core Features
 
 ### For Students
