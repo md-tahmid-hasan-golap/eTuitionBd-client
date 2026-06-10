@@ -9,7 +9,7 @@ eTuitionBd is a premium full-stack tuition management application that connects 
 Clone the Server Side:
 
 ```bash
-git clone https://github.com/md-tahmid-hasan-golap/eTuitionBd-server
+ https://github.com/md-tahmid-hasan-golap/eTuitionBd-server
 ```
 
 ## Core Features
@@ -65,7 +65,7 @@ git clone https://github.com/md-tahmid-hasan-golap/eTuitionBd-server
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/md-tahmid-hasan-golap/etuitionbd-client.git
+    https://github.com/md-tahmid-hasan-golap/etuitionbd-client.git
    ```
 
 2. Install dependencies:
