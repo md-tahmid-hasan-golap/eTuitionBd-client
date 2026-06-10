@@ -48,11 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/tuition/:id",
-        element: (
-          <PrivateRouter>
-            <TuitionDetails></TuitionDetails>
-          </PrivateRouter>
-        ),
+        element: <TuitionDetails></TuitionDetails>,
       },
       {
         path: "tutors",
@@ -75,7 +71,7 @@ const router = createBrowserRouter([
         element: <TermsOfService />,
       },
       {
-        path: "profile-settings", // মেইন লেআউটের জন্য প্রোফাইল (ঐচ্ছিক)
+        path: "profile-settings",
         element: (
           <PrivateRouter>
             <MyProfile />
