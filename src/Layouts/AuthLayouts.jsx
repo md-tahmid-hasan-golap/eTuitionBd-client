@@ -8,8 +8,8 @@ const AuthLayouts = () => {
   return (
     <div className="min-h-screen bg-[#fcfcfd] flex flex-col font-sans relative overflow-hidden">
       {/* Background Subtle Gradient Blobs */}
-      <div className="absolute top-[-5%] right-[-5%] w-72 h-72 bg-orange-50 rounded-full blur-[100px] opacity-70"></div>
-      <div className="absolute bottom-[-5%] left-[-5%] w-72 h-72 bg-blue-50 rounded-full blur-[100px] opacity-70"></div>
+      <div className="absolute top-[-5%] right-[-5%] w-72 h-72 bg-orange-50 dark:bg-orange-900/30 rounded-full blur-[100px] opacity-70"></div>
+      <div className="absolute bottom-[-5%] left-[-5%] w-72 h-72 bg-blue-50 dark:bg-blue-900/30 rounded-full blur-[100px] opacity-70"></div>
 
       {/* Top Navigation */}
       <header className="p-6 relative z-20">
@@ -18,7 +18,7 @@ const AuthLayouts = () => {
           className="group flex items-center gap-3 text-[#0f172a] font-bold transition-all"
         >
           {/* Circular Icon Holder */}
-          <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 group-hover:bg-[#0f172a] group-hover:text-white transition-all duration-300">
+          <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-md border border-gray-100 dark:border-slate-700 group-hover:bg-[#0f172a] group-hover:text-white transition-all duration-300">
             <FaArrowLeft className="group-hover:-translate-x-1 transition-transform duration-300 text-sm" />
           </div>
 

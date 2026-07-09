@@ -10,14 +10,14 @@ const Tuition = ({ data }) => {
   const latestTuitions = tuitionList.slice(0, 6);
 
   return (
-    <section className="bg-white py-20 px-4">
+    <section className="bg-white dark:bg-slate-900 py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
           <div className="text-center md:text-left">
             <h2 className="text-3xl md:text-5xl font-black text-[#0f172a] tracking-tight italic">
               Latest <span className="text-orange-500">Tuitions</span>
             </h2>
-            <p className="text-slate-500 mt-3 font-medium text-lg">
+            <p className="text-slate-500 dark:text-slate-400 mt-3 font-medium text-lg">
               Freshly posted requirements from students looking for expert
               tutors.
             </p>
@@ -41,7 +41,7 @@ const Tuition = ({ data }) => {
 
         {/* Display message if no data exists */}
         {latestTuitions.length === 0 && (
-          <div className="text-center py-20 bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200">
+          <div className="text-center py-20 bg-slate-50 dark:bg-slate-800 rounded-[3rem] border-2 border-dashed border-slate-200 dark:border-slate-700">
             <p className="text-slate-400 font-bold italic">
               No tuition posts are currently available.
             </p>

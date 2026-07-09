@@ -89,7 +89,7 @@ const TutionsDetails = () => {
   return (
     <div className="bg-[#f8fafc] min-h-screen py-16 px-4 relative">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100">
+        <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-700">
           {/* Header Section */}
           <div className="bg-[#0f172a] p-12 text-white relative">
             <div className="flex flex-wrap justify-between items-start gap-6 relative z-10">
@@ -103,7 +103,7 @@ const TutionsDetails = () => {
                   <span>{tuitionType}</span>
                 </div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20">
+              <div className="bg-white/10 dark:bg-slate-800/50 backdrop-blur-md p-6 rounded-3xl border border-white/20">
                 <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-1">
                   Monthly Salary
                 </p>
@@ -116,27 +116,27 @@ const TutionsDetails = () => {
           <div className="p-8 md:p-14">
             {/* Info Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              <div className="flex items-center gap-5 p-6 bg-slate-50 rounded-3xl border border-slate-100 group">
-                <div className="w-14 h-14 bg-white text-blue-600 rounded-2xl flex items-center justify-center text-2xl shadow-sm">
+              <div className="flex items-center gap-5 p-6 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 group">
+                <div className="w-14 h-14 bg-white dark:bg-slate-900 text-blue-600 rounded-2xl flex items-center justify-center text-2xl shadow-sm">
                   <FaMapMarkerAlt />
                 </div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
                     Location
                   </p>
-                  <p className="text-slate-800 font-extrabold text-lg">{tuitionLocation}</p>
+                  <p className="text-slate-800 dark:text-slate-200 font-extrabold text-lg">{tuitionLocation}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-5 p-6 bg-slate-50 rounded-3xl border border-slate-100 group">
-                <div className="w-14 h-14 bg-white text-orange-500 rounded-2xl flex items-center justify-center text-2xl shadow-sm">
+              <div className="flex items-center gap-5 p-6 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 group">
+                <div className="w-14 h-14 bg-white dark:bg-slate-900 text-orange-500 rounded-2xl flex items-center justify-center text-2xl shadow-sm">
                   <FaCalendarAlt />
                 </div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
                     Weekly Schedule
                   </p>
-                  <p className="text-slate-800 font-extrabold text-lg">{daysPerWeek}</p>
+                  <p className="text-slate-800 dark:text-slate-200 font-extrabold text-lg">{daysPerWeek}</p>
                 </div>
               </div>
             </div>
@@ -144,29 +144,29 @@ const TutionsDetails = () => {
             {/* Description */}
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                <div className="p-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 rounded-lg">
                   <FaInfoCircle />
                 </div>
                 <h4 className="text-[#0f172a] text-sm font-black tracking-widest uppercase">
                   Requirement Details
                 </h4>
               </div>
-              <p className="text-slate-600 leading-loose font-medium bg-slate-50/50 p-8 rounded-[2rem] border border-slate-200">
+              <p className="text-slate-600 dark:text-slate-300 leading-loose font-medium bg-slate-50/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-700">
                 {description}
               </p>
             </div>
 
             {/* Metadata Footer */}
-            <div className="border-t border-slate-100 pt-10 flex flex-wrap justify-between items-center gap-6">
+            <div className="border-t border-slate-100 dark:border-slate-700 pt-10 flex flex-wrap justify-between items-center gap-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-400 border border-slate-200 dark:border-slate-700">
                   <FaUserAlt size={18} />
                 </div>
                 <div>
                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
                     Posted By
                   </p>
-                  <p className="text-slate-900 font-bold">{studentName}</p>
+                  <p className="text-slate-900 dark:text-slate-100 font-bold">{studentName}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 text-slate-400 text-[10px] font-black uppercase tracking-widest">
@@ -203,7 +203,7 @@ const TutionsDetails = () => {
               ) : (
                 <button
                   disabled
-                  className="w-full bg-slate-300 text-slate-500 font-black py-5 rounded-3xl shadow-none uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-4 cursor-not-allowed"
+                  className="w-full bg-slate-300 text-slate-500 dark:text-slate-400 font-black py-5 rounded-3xl shadow-none uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-4 cursor-not-allowed"
                 >
                   Only Tutors Can Apply
                 </button>
@@ -216,19 +216,19 @@ const TutionsDetails = () => {
       {/* Application Modal */}
       {isModalOpen && (
         <div className="modal modal-open">
-          <div className="modal-box rounded-[2rem] p-8 max-w-md bg-white">
+          <div className="modal-box rounded-[2rem] p-8 max-w-md bg-white dark:bg-slate-900">
             <h3 className="font-black text-2xl text-[#0f172a] mb-2">Apply for Tuition</h3>
-            <p className="text-sm text-slate-500 mb-6">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
               Provide your details to submit your application.
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="space-y-1">
-                <label className="text-sm font-bold text-slate-700 ml-1">Qualifications</label>
+                <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Qualifications</label>
                 <input
                   type="text"
                   placeholder="e.g. BSc in CSE, BracU"
-                  className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+                  className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
                   {...register("qualifications", { required: "Qualifications are required" })}
                 />
                 {errors.qualifications && (
@@ -237,11 +237,11 @@ const TutionsDetails = () => {
               </div>
 
               <div className="space-y-1">
-                <label className="text-sm font-bold text-slate-700 ml-1">Experience</label>
+                <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Experience</label>
                 <input
                   type="text"
                   placeholder="e.g. 2 years of teaching Math"
-                  className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+                  className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
                   {...register("experience", { required: "Experience is required" })}
                 />
                 {errors.experience && (
@@ -250,13 +250,13 @@ const TutionsDetails = () => {
               </div>
 
               <div className="space-y-1">
-                <label className="text-sm font-bold text-slate-700 ml-1">
+                <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">
                   Expected Salary (BDT)
                 </label>
                 <input
                   type="number"
                   placeholder={`e.g. ${salary}`}
-                  className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+                  className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
                   {...register("expectedSalary", { required: "Expected Salary is required" })}
                 />
                 {errors.expectedSalary && (

@@ -31,7 +31,7 @@ const AdminHome = () => {
 
   if (isError) {
     return (
-      <div className="text-center py-20 bg-white rounded-[2.5rem] border border-red-100 shadow-sm">
+      <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-red-100 dark:border-red-900/50 shadow-sm">
         <p className="text-red-500 text-xl font-bold italic">Failed to load admin statistics.</p>
       </div>
     );
@@ -47,7 +47,7 @@ const AdminHome = () => {
         <h2 className="text-4xl font-black text-[#0f172a] tracking-tight italic uppercase">
           Analytics <span className="text-orange-500">Dashboard</span>
         </h2>
-        <p className="text-slate-500 font-medium mt-2">Real-time platform performance and user distribution.</p>
+        <p className="text-slate-500 dark:text-slate-400 font-medium mt-2">Real-time platform performance and user distribution.</p>
       </div>
 
       {/* Stats Grid */}
@@ -63,9 +63,9 @@ const AdminHome = () => {
           <p className="text-orange-100 text-xs mt-2 font-bold opacity-80">Accumulated Earnings</p>
         </div>
 
-        <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+        <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group">
           <div className="flex justify-between items-start mb-4">
-            <div className="w-14 h-14 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-blue-500 group-hover:text-white transition-colors">
+            <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 text-blue-500 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-blue-500 group-hover:text-white transition-colors">
               <FaUsers />
             </div>
             <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">Total Users</span>
@@ -74,9 +74,9 @@ const AdminHome = () => {
           <p className="text-slate-400 text-xs mt-2 font-bold italic">Active Profiles</p>
         </div>
 
-        <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+        <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group">
           <div className="flex justify-between items-start mb-4">
-            <div className="w-14 h-14 bg-purple-50 text-purple-500 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-purple-500 group-hover:text-white transition-colors">
+            <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 text-purple-500 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-purple-500 group-hover:text-white transition-colors">
               <FaUserGraduate />
             </div>
             <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">Tutor Count</span>
@@ -85,9 +85,9 @@ const AdminHome = () => {
           <p className="text-slate-400 text-xs mt-2 font-bold italic">Verified Tutors</p>
         </div>
 
-        <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+        <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow group">
           <div className="flex justify-between items-start mb-4">
-            <div className="w-14 h-14 bg-emerald-50 text-emerald-500 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+            <div className="w-14 h-14 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-500 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-500 group-hover:text-white transition-colors">
               <FaBookOpen />
             </div>
             <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">Tuitions</span>
@@ -101,7 +101,7 @@ const AdminHome = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* Revenue Trend Chart */}
-        <div className="lg:col-span-2 bg-white rounded-[3rem] p-8 md:p-12 border border-slate-100 shadow-sm">
+        <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-[3rem] p-8 md:p-12 border border-slate-100 dark:border-slate-700 shadow-sm">
           <div className="flex items-center gap-3 mb-10">
             <FaChartBar className="text-orange-500 text-xl" />
             <h3 className="text-xl font-black text-[#0f172a] uppercase tracking-tight">Revenue Trend</h3>
@@ -146,7 +146,7 @@ const AdminHome = () => {
         </div>
 
         {/* User Distribution Pie Chart */}
-        <div className="bg-white rounded-[3rem] p-8 md:p-12 border border-slate-100 shadow-sm flex flex-col">
+        <div className="bg-white dark:bg-slate-900 rounded-[3rem] p-8 md:p-12 border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
           <div className="flex items-center gap-3 mb-10">
             <FaChartPie className="text-blue-500 text-xl" />
             <h3 className="text-xl font-black text-[#0f172a] uppercase tracking-tight">User Roles</h3>
@@ -171,12 +171,12 @@ const AdminHome = () => {
                 <Legend 
                   verticalAlign="bottom" 
                   iconType="circle"
-                  formatter={(value) => <span className="text-slate-500 font-bold text-xs uppercase tracking-widest">{value}</span>}
+                  formatter={(value) => <span className="text-slate-500 dark:text-slate-400 font-bold text-xs uppercase tracking-widest">{value}</span>}
                 />
               </PieChart>
             </ResponsiveContainer>
           </div>
-          <div className="mt-6 p-6 bg-slate-50 rounded-[2rem] border border-slate-100">
+          <div className="mt-6 p-6 bg-slate-50 dark:bg-slate-800 rounded-[2rem] border border-slate-100 dark:border-slate-700">
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1 text-center">Platform Growth</p>
             <p className="text-[#0f172a] font-bold text-center text-sm">Balanced distribution of students and tutors.</p>
           </div>

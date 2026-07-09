@@ -26,10 +26,10 @@ const TuitionsCard = ({ tution, tuition, isDashboard, handleDelete }) => {
   } = tuitionData || {};
 
   return (
-    <div className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col h-full relative overflow-hidden">
+    <div className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col h-full relative overflow-hidden">
       {/* Status or Type Badge */}
       <div className="flex justify-between items-start mb-6">
-        <span className="bg-slate-100 text-slate-700 text-[10px] font-black uppercase tracking-[0.15em] px-4 py-1.5 rounded-full border border-slate-200">
+        <span className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[10px] font-black uppercase tracking-[0.15em] px-4 py-1.5 rounded-full border border-slate-200 dark:border-slate-700">
           {className}
         </span>
         <div className="flex items-center gap-1.5 text-emerald-600 font-extrabold text-lg">
@@ -50,33 +50,33 @@ const TuitionsCard = ({ tution, tuition, isDashboard, handleDelete }) => {
       </div>
 
       {/* Short Description */}
-      <p className="text-slate-500 text-sm mb-8 line-clamp-3 leading-relaxed font-medium">
+      <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 line-clamp-3 leading-relaxed font-medium">
         {description}
       </p>
 
       {/* Info List */}
       <div className="space-y-4 mb-8 flex-grow">
         <div className="flex items-center gap-4 group/item">
-          <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 group-hover/item:bg-orange-500 group-hover/item:text-white transition-all">
+          <div className="w-8 h-8 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 group-hover/item:bg-orange-500 group-hover/item:text-white transition-all">
             <FaMapMarkerAlt size={14} />
           </div>
           <div>
             <p className="text-[10px] uppercase text-slate-400 font-bold tracking-widest">
               Location
             </p>
-            <p className="text-sm text-slate-700 font-bold">{location}</p>
+            <p className="text-sm text-slate-700 dark:text-slate-300 font-bold">{location}</p>
           </div>
         </div>
 
         <div className="flex items-center gap-4 group/item">
-          <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all">
+          <div className="w-8 h-8 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-blue-500 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all">
             <FaCalendarAlt size={14} />
           </div>
           <div>
             <p className="text-[10px] uppercase text-slate-400 font-bold tracking-widest">
               Schedule
             </p>
-            <p className="text-sm text-slate-700 font-bold">
+            <p className="text-sm text-slate-700 dark:text-slate-300 font-bold">
               {daysPerWeek} Per Week
             </p>
           </div>
@@ -122,7 +122,7 @@ const TuitionsCard = ({ tution, tuition, isDashboard, handleDelete }) => {
       </div>
 
       {/* Decorative background element */}
-      <div className="absolute -right-4 -top-4 w-24 h-24 bg-slate-50 rounded-full -z-10 group-hover:bg-blue-50 transition-colors"></div>
+      <div className="absolute -right-4 -top-4 w-24 h-24 bg-slate-50 dark:bg-slate-800 rounded-full -z-10 group-hover:bg-blue-50 dark:bg-blue-900/30 transition-colors"></div>
     </div>
   );
 };

@@ -36,24 +36,24 @@ const Tuitions = () => {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen py-10">
+    <div className="bg-slate-50 dark:bg-slate-800 min-h-screen py-10">
       <div className="max-w-7xl mx-auto px-4">
         {/* Title Section */}
         <div className="text-center mb-10">
           <h2 className="text-4xl font-black text-[#0f172a] italic mb-3">
             Available <span className="text-orange-500">Tuitions</span>
           </h2>
-          <p className="text-slate-500 font-medium">
+          <p className="text-slate-500 dark:text-slate-400 font-medium">
             Explore our tuition opportunities and start your teaching journey.
           </p>
         </div>
 
         {/* Filter Section */}
-        <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 mb-10 flex flex-col lg:flex-row gap-4 items-center justify-between">
+        <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 mb-10 flex flex-col lg:flex-row gap-4 items-center justify-between">
           <input
             type="text"
             placeholder="Search subject..."
-            className="input input-bordered w-full lg:max-w-[200px] rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500 bg-slate-50 text-slate-800"
+            className="input input-bordered w-full lg:max-w-[200px] rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200"
             value={search}
             onChange={(e) => { setSearch(e.target.value); setPage(1); }}
           />
@@ -61,13 +61,13 @@ const Tuitions = () => {
           <input
             type="text"
             placeholder="Filter by location..."
-            className="input input-bordered w-full lg:max-w-[200px] rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500 bg-slate-50 text-slate-800"
+            className="input input-bordered w-full lg:max-w-[200px] rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200"
             value={location}
             onChange={(e) => { setLocation(e.target.value); setPage(1); }}
           />
           
           <select 
-            className="select select-bordered w-full lg:max-w-[200px] rounded-xl focus:border-orange-500 bg-slate-50 text-slate-800"
+            className="select select-bordered w-full lg:max-w-[200px] rounded-xl focus:border-orange-500 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200"
             value={selectedClass}
             onChange={(e) => { setSelectedClass(e.target.value); setPage(1); }}
           >
@@ -80,7 +80,7 @@ const Tuitions = () => {
           </select>
 
           <select 
-            className="select select-bordered w-full lg:max-w-[200px] rounded-xl focus:border-orange-500 bg-slate-50 text-slate-800"
+            className="select select-bordered w-full lg:max-w-[200px] rounded-xl focus:border-orange-500 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200"
             value={sort}
             onChange={(e) => { setSort(e.target.value); setPage(1); }}
           >
@@ -94,7 +94,7 @@ const Tuitions = () => {
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map(i => (
-              <div key={i} className="flex w-full flex-col gap-4 bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm">
+              <div key={i} className="flex w-full flex-col gap-4 bg-white dark:bg-slate-900 p-6 rounded-[2rem] border border-slate-100 dark:border-slate-700 shadow-sm">
                 <div className="skeleton h-10 w-28 rounded-full bg-slate-200"></div>
                 <div className="skeleton h-6 w-3/4 bg-slate-200"></div>
                 <div className="skeleton h-4 w-1/2 bg-slate-200"></div>
@@ -104,7 +104,7 @@ const Tuitions = () => {
             ))}
           </div>
         ) : isError ? (
-          <div className="text-center py-20 bg-white rounded-[2.5rem] border border-red-100 shadow-sm flex flex-col items-center gap-4">
+          <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-red-100 dark:border-red-900/50 shadow-sm flex flex-col items-center gap-4">
             <p className="text-red-500 text-xl font-bold italic">Oops! Something went wrong while fetching tuitions.</p>
             <button 
               onClick={() => refetch()}
@@ -114,7 +114,7 @@ const Tuitions = () => {
             </button>
           </div>
         ) : tuitions?.length === 0 ? (
-          <div className="text-center py-24 bg-white rounded-[3rem] border border-slate-100 shadow-sm">
+          <div className="text-center py-24 bg-white dark:bg-slate-900 rounded-[3rem] border border-slate-100 dark:border-slate-700 shadow-sm">
             <p className="text-slate-400 text-2xl font-bold italic uppercase tracking-widest">
               No Tuitions Found Matching Your Criteria
             </p>
@@ -133,17 +133,17 @@ const Tuitions = () => {
             <button 
               onClick={handlePrev} 
               disabled={page === 1}
-              className="btn btn-outline border-slate-200 hover:bg-orange-500 hover:border-orange-500 px-8 rounded-2xl disabled:opacity-50 disabled:bg-slate-50 font-bold"
+              className="btn btn-outline border-slate-200 dark:border-slate-700 hover:bg-orange-500 hover:border-orange-500 px-8 rounded-2xl disabled:opacity-50 disabled:bg-slate-50 dark:bg-slate-800 font-bold"
             >
               Previous
             </button>
-            <span className="font-black text-slate-700 bg-white px-5 py-3 rounded-xl shadow-sm border border-slate-100">
+            <span className="font-black text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-900 px-5 py-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
               Page {page} {data?.totalCount ? `of ${Math.ceil(data.totalCount / limit)}` : ""}
             </span>
             <button 
               onClick={handleNext} 
               disabled={data?.totalCount ? page >= Math.ceil(data.totalCount / limit) : tuitions.length < limit}
-              className="btn btn-outline border-slate-200 hover:bg-orange-500 hover:border-orange-500 px-8 rounded-2xl disabled:opacity-50 disabled:bg-slate-50 font-bold"
+              className="btn btn-outline border-slate-200 dark:border-slate-700 hover:bg-orange-500 hover:border-orange-500 px-8 rounded-2xl disabled:opacity-50 disabled:bg-slate-50 dark:bg-slate-800 font-bold"
             >
               Next
             </button>

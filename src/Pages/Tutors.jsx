@@ -19,14 +19,14 @@ const Tutors = () => {
   const tutors = Array.isArray(data) ? data : [];
 
   return (
-    <div className="bg-slate-50 min-h-screen py-16">
+    <div className="bg-slate-50 dark:bg-slate-800 min-h-screen py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-black text-[#0f172a] italic mb-4 uppercase tracking-tight">
             Expert <span className="text-orange-500">Tutors</span>
           </h2>
-          <p className="text-slate-500 font-medium max-w-2xl mx-auto">
+          <p className="text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto">
             Connect with qualified professionals ready to help you excel in your studies.
           </p>
         </div>
@@ -35,19 +35,19 @@ const Tutors = () => {
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-white p-6 rounded-[2.5rem] border border-slate-100 shadow-sm animate-pulse">
+              <div key={i} className="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm animate-pulse">
                 <div className="w-24 h-24 bg-slate-200 rounded-[2rem] mb-6"></div>
                 <div className="h-6 bg-slate-200 rounded-full w-3/4 mb-4"></div>
                 <div className="h-4 bg-slate-200 rounded-full w-1/2 mb-8"></div>
                 <div className="space-y-3">
-                  <div className="h-12 bg-slate-100 rounded-2xl w-full"></div>
-                  <div className="h-12 bg-slate-100 rounded-2xl w-full"></div>
+                  <div className="h-12 bg-slate-100 dark:bg-slate-800 rounded-2xl w-full"></div>
+                  <div className="h-12 bg-slate-100 dark:bg-slate-800 rounded-2xl w-full"></div>
                 </div>
               </div>
             ))}
           </div>
         ) : isError ? (
-          <div className="text-center py-20 bg-white rounded-[2.5rem] border border-red-100 shadow-sm flex flex-col items-center gap-4">
+          <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-red-100 dark:border-red-900/50 shadow-sm flex flex-col items-center gap-4">
             <p className="text-red-500 text-xl font-bold italic">Oops! Couldn't load tutor data.</p>
             <button 
               onClick={() => refetch()}
@@ -57,7 +57,7 @@ const Tutors = () => {
             </button>
           </div>
         ) : tutors?.length === 0 ? (
-          <div className="text-center py-24 bg-white rounded-[3rem] border border-slate-100 shadow-sm">
+          <div className="text-center py-24 bg-white dark:bg-slate-900 rounded-[3rem] border border-slate-100 dark:border-slate-700 shadow-sm">
             <p className="text-slate-400 text-2xl font-bold italic uppercase tracking-widest">
               No Tutors Available At This Moment
             </p>

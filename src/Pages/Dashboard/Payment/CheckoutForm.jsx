@@ -113,13 +113,13 @@ const CheckoutForm = ({ application }) => {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                <div className="flex justify-between items-center mb-6 border-b border-slate-200 pb-4">
-                    <span className="text-slate-500 font-bold uppercase tracking-widest text-[10px]">Total Amount</span>
+            <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                <div className="flex justify-between items-center mb-6 border-b border-slate-200 dark:border-slate-700 pb-4">
+                    <span className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest text-[10px]">Total Amount</span>
                     <span className="text-2xl font-black text-[#0f172a]">BDT {price}</span>
                 </div>
                 
-                <div className="p-4 bg-white rounded-xl border border-slate-200">
+                <div className="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700">
                     <CardElement
                         onChange={(e) => {
                             setError(e.error ? e.error.message : "");

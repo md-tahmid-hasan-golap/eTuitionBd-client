@@ -45,7 +45,7 @@ const TuitionDetails = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-800">
         <span className="loading loading-spinner loading-lg text-orange-500"></span>
       </div>
     );
@@ -53,7 +53,7 @@ const TuitionDetails = () => {
 
   if (isError || !tution) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 gap-4">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-800 gap-4">
         <p className="text-red-500 text-xl font-bold">Error loading tuition details.</p>
         <Link to="/tuitions" className="btn btn-primary rounded-xl">Back to List</Link>
       </div>
@@ -103,7 +103,7 @@ const TuitionDetails = () => {
     <div className="bg-[#f8fafc] min-h-screen py-16 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Navigation Breadcrumb */}
-        <div className="text-sm breadcrumbs mb-8 text-slate-500 font-medium">
+        <div className="text-sm breadcrumbs mb-8 text-slate-500 dark:text-slate-400 font-medium">
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/tuitions">Tuitions</Link></li>
@@ -111,7 +111,7 @@ const TuitionDetails = () => {
           </ul>
         </div>
 
-        <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100 flex flex-col lg:flex-row">
+        <div className="bg-white dark:bg-slate-900 rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-700 flex flex-col lg:flex-row">
           {/* Main Content Side */}
           <div className="flex-1">
              {/* Header */}
@@ -139,22 +139,22 @@ const TuitionDetails = () => {
 
             <div className="p-8 md:p-14">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                    <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100 flex gap-6 items-center">
-                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm text-blue-600">
+                    <div className="p-8 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 flex gap-6 items-center">
+                        <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center text-3xl shadow-sm text-blue-600">
                             <FaMapMarkerAlt />
                         </div>
                         <div>
                             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Location</p>
-                            <p className="text-slate-800 font-black text-xl">{tuitionLocation}</p>
+                            <p className="text-slate-800 dark:text-slate-200 font-black text-xl">{tuitionLocation}</p>
                         </div>
                     </div>
-                    <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100 flex gap-6 items-center">
-                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm text-emerald-500">
+                    <div className="p-8 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 flex gap-6 items-center">
+                        <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center text-3xl shadow-sm text-emerald-500">
                             <FaMoneyBillWave />
                         </div>
                         <div>
                             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Salary Range</p>
-                            <p className="text-slate-800 font-black text-xl">BDT {salary} <span className="text-slate-400 text-sm font-medium">/month</span></p>
+                            <p className="text-slate-800 dark:text-slate-200 font-black text-xl">BDT {salary} <span className="text-slate-400 text-sm font-medium">/month</span></p>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@ const TuitionDetails = () => {
                         <FaInfoCircle className="text-orange-500 text-xl" />
                         <h3 className="text-[#0f172a] text-xl font-black tracking-tight">Requirement Description</h3>
                     </div>
-                    <div className="prose max-w-none text-slate-600 font-medium leading-relaxed bg-slate-50/50 p-10 rounded-[2.5rem] border border-slate-200 border-dashed">
+                    <div className="prose max-w-none text-slate-600 dark:text-slate-300 font-medium leading-relaxed bg-slate-50/50 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 border-dashed">
                         {description || "No detailed description provided for this tuition post."}
                     </div>
                 </div>
@@ -172,16 +172,16 @@ const TuitionDetails = () => {
           </div>
 
           {/* Sidebar / Apply Section */}
-          <div className="lg:w-96 bg-slate-50/80 backdrop-blur-sm border-l border-slate-100 p-10 flex flex-col justify-between">
+          <div className="lg:w-96 bg-slate-50/80 backdrop-blur-sm border-l border-slate-100 dark:border-slate-700 p-10 flex flex-col justify-between">
             <div className="space-y-10">
                 <div className="space-y-4">
                     <h4 className="text-[#0f172a] font-black uppercase tracking-widest text-[10px]">Posted By</h4>
-                    <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                        <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-black">
+                    <div className="flex items-center gap-4 bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                        <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/50 text-orange-600 rounded-full flex items-center justify-center font-black">
                             {studentName?.[0] || "S"}
                         </div>
                         <div>
-                            <p className="text-slate-900 font-black">{studentName || "Anonymous"}</p>
+                            <p className="text-slate-900 dark:text-slate-100 font-black">{studentName || "Anonymous"}</p>
                             <p className="text-slate-400 text-[10px] font-bold">Verified Student</p>
                         </div>
                     </div>
@@ -192,7 +192,7 @@ const TuitionDetails = () => {
                      <div className="space-y-3">
                         <div className="flex justify-between items-center text-sm">
                             <span className="text-slate-400 font-bold">Date Posted</span>
-                            <span className="text-slate-800 font-black">{new Date(postedAt).toLocaleDateString()}</span>
+                            <span className="text-slate-800 dark:text-slate-200 font-black">{new Date(postedAt).toLocaleDateString()}</span>
                         </div>
                         <div className="flex justify-between items-center text-sm">
                             <span className="text-slate-400 font-bold">Status</span>
@@ -220,7 +220,7 @@ const TuitionDetails = () => {
                     {hasApplied ? "Already Applied" : "Apply for Tuition"}
                     </button>
                 ) : (
-                    <div className="p-4 bg-blue-50 rounded-2xl border border-blue-100 text-center">
+                    <div className="p-4 bg-blue-50 dark:bg-blue-900/30 rounded-2xl border border-blue-100 dark:border-blue-900/50 text-center">
                         <p className="text-blue-600 text-xs font-black uppercase tracking-widest leading-relaxed">
                             Students cannot apply to their own or others' tuitions.
                         </p>
@@ -234,7 +234,7 @@ const TuitionDetails = () => {
       {/* Modern Application Modal */}
       {isModalOpen && (
         <div className="modal modal-open">
-          <div className="modal-box rounded-[3rem] p-10 max-w-lg bg-white border border-slate-100 shadow-2xl">
+          <div className="modal-box rounded-[3rem] p-10 max-w-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-700 shadow-2xl">
             <div className="flex justify-between items-center mb-6">
                 <div>
                     <h3 className="font-black text-3xl text-[#0f172a]">Send Application</h3>
@@ -247,30 +247,30 @@ const TuitionDetails = () => {
               {/* Read-only User Info */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black text-slate-500 uppercase ml-1">Your Name</label>
+                  <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">Your Name</label>
                   <input
                     type="text"
                     value={user?.displayName || "N/A"}
                     readOnly
-                    className="input input-bordered w-full rounded-2xl bg-slate-100 border-slate-200 text-slate-500 font-bold cursor-not-allowed text-sm"
+                    className="input input-bordered w-full rounded-2xl bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-bold cursor-not-allowed text-sm"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black text-slate-500 uppercase ml-1">Your Email</label>
+                  <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">Your Email</label>
                   <input
                     type="email"
                     value={user?.email || "N/A"}
                     readOnly
-                    className="input input-bordered w-full rounded-2xl bg-slate-100 border-slate-200 text-slate-500 font-bold cursor-not-allowed text-sm"
+                    className="input input-bordered w-full rounded-2xl bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-bold cursor-not-allowed text-sm"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-black text-slate-500 uppercase ml-1">Your Qualifications</label>
+                <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">Your Qualifications</label>
                 <textarea
                   placeholder="e.g. BSc in Mathematics from University of Dhaka, 2 years experience..."
-                  className="textarea textarea-bordered w-full rounded-2xl bg-slate-50 border-slate-200 focus:border-orange-500 focus:outline-none min-h-[100px] text-slate-800 font-medium"
+                  className="textarea textarea-bordered w-full rounded-2xl bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none min-h-[100px] text-slate-800 dark:text-slate-200 font-medium"
                   {...register("qualifications", { required: "Please provide your qualifications" })}
                 />
                 {errors.qualifications && <span className="text-xs text-red-500 ml-1">{errors.qualifications.message}</span>}
@@ -278,20 +278,20 @@ const TuitionDetails = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                    <label className="text-[10px] font-black text-slate-500 uppercase ml-1">Experience Level</label>
+                    <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">Experience Level</label>
                     <input
                     type="text"
                     placeholder="e.g. 2+ Years"
-                    className="input input-bordered w-full rounded-2xl bg-slate-50 border-slate-200 focus:border-orange-500 text-slate-800 font-medium"
+                    className="input input-bordered w-full rounded-2xl bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:border-orange-500 text-slate-800 dark:text-slate-200 font-medium"
                     {...register("experience", { required: true })}
                     />
                 </div>
                 <div className="space-y-2">
-                    <label className="text-[10px] font-black text-slate-500 uppercase ml-1">Expected Salary</label>
+                    <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">Expected Salary</label>
                     <input
                     type="number"
                     placeholder={`e.g. ${salary}`}
-                    className="input input-bordered w-full rounded-2xl bg-slate-50 border-slate-200 focus:border-orange-500 text-slate-800 font-medium"
+                    className="input input-bordered w-full rounded-2xl bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:border-orange-500 text-slate-800 dark:text-slate-200 font-medium"
                     {...register("expectedSalary", { required: true })}
                     />
                 </div>
@@ -301,7 +301,7 @@ const TuitionDetails = () => {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="btn flex-1 bg-slate-100 hover:bg-slate-200 text-slate-600 border-none rounded-2xl h-14 font-black uppercase tracking-widest text-xs"
+                  className="btn flex-1 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-600 dark:text-slate-300 border-none rounded-2xl h-14 font-black uppercase tracking-widest text-xs"
                 >
                   Cancel
                 </button>

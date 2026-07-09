@@ -36,7 +36,7 @@ const AppliedTutors = () => {
       confirmButtonText: "Yes, Reject",
       background: "#fff",
       customClass: {
-        title: "font-black text-slate-800",
+        title: "font-black text-slate-800 dark:text-slate-200",
         confirmButton: "rounded-2xl px-6 py-3",
         cancelButton: "rounded-2xl px-6 py-3",
       }
@@ -73,11 +73,11 @@ const AppliedTutors = () => {
         <h2 className="text-4xl font-black text-[#0f172a] tracking-tight italic uppercase">
           Tutor <span className="text-orange-500">Applications</span>
         </h2>
-        <p className="text-slate-500 font-medium mt-2">Review and hire the best tutor for your tuition.</p>
+        <p className="text-slate-500 dark:text-slate-400 font-medium mt-2">Review and hire the best tutor for your tuition.</p>
       </div>
 
       {applications.length === 0 ? (
-        <div className="bg-white p-20 rounded-[3rem] border-2 border-dashed border-slate-200 text-center">
+        <div className="bg-white dark:bg-slate-900 p-20 rounded-[3rem] border-2 border-dashed border-slate-200 dark:border-slate-700 text-center">
           <FaUserGraduate className="mx-auto text-slate-200 text-7xl mb-6" />
           <h3 className="text-2xl font-black text-slate-400 uppercase italic">No applications yet</h3>
           <p className="text-slate-400 mt-2 font-medium">Wait for tutors to find your post.</p>
@@ -85,10 +85,10 @@ const AppliedTutors = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {applications.map((app) => (
-            <div key={app._id} className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden group">
+            <div key={app._id} className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden group">
               {/* Header */}
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center text-2xl font-black text-orange-600">
+                <div className="w-16 h-16 rounded-2xl bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-2xl font-black text-orange-600">
                   {app.tutorName?.[0] || "T"}
                 </div>
                 <div>
@@ -100,36 +100,36 @@ const AppliedTutors = () => {
               {/* Details */}
               <div className="space-y-4 mb-8">
                 {app.tuitionSubject && (
-                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 group-hover:bg-white transition-colors">
+                  <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700 group-hover:bg-white dark:bg-slate-900 transition-colors">
                     <div className="flex items-center gap-3 text-purple-500 mb-1">
                       <FaUserGraduate size={14} />
                       <span className="text-[10px] font-black uppercase tracking-widest">Subject</span>
                     </div>
-                    <p className="text-sm text-slate-700 font-bold">{app.tuitionSubject}</p>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 font-bold">{app.tuitionSubject}</p>
                   </div>
                 )}
-                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 group-hover:bg-white transition-colors">
+                <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700 group-hover:bg-white dark:bg-slate-900 transition-colors">
                   <div className="flex items-center gap-3 text-orange-500 mb-1">
                     <FaUserGraduate size={14} />
                     <span className="text-[10px] font-black uppercase tracking-widest">Qualifications</span>
                   </div>
-                  <p className="text-sm text-slate-700 font-bold line-clamp-2">{app.qualifications}</p>
+                  <p className="text-sm text-slate-700 dark:text-slate-300 font-bold line-clamp-2">{app.qualifications}</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 group-hover:bg-white transition-colors">
+                  <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700 group-hover:bg-white dark:bg-slate-900 transition-colors">
                     <div className="flex items-center gap-3 text-blue-500 mb-1">
                       <FaClock size={14} />
                       <span className="text-[10px] font-black uppercase tracking-widest">Experience</span>
                     </div>
-                    <p className="text-sm text-slate-700 font-bold">{app.experience}</p>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 font-bold">{app.experience}</p>
                   </div>
-                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 group-hover:bg-white transition-colors">
+                  <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700 group-hover:bg-white dark:bg-slate-900 transition-colors">
                     <div className="flex items-center gap-3 text-emerald-500 mb-1">
                       <FaMoneyBillWave size={14} />
                       <span className="text-[10px] font-black uppercase tracking-widest">Salary</span>
                     </div>
-                    <p className="text-sm text-slate-700 font-bold">{app.expectedSalary} BDT</p>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 font-bold">{app.expectedSalary} BDT</p>
                   </div>
                 </div>
               </div>
@@ -137,11 +137,11 @@ const AppliedTutors = () => {
               {/* Footer / Actions */}
               <div>
                 {app.status === "Accepted" ? (
-                  <div className="w-full bg-emerald-50 text-emerald-600 font-black py-4 rounded-2xl flex items-center justify-center gap-2 uppercase text-[10px] tracking-[0.2em] border border-emerald-100">
+                  <div className="w-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 font-black py-4 rounded-2xl flex items-center justify-center gap-2 uppercase text-[10px] tracking-[0.2em] border border-emerald-100 dark:border-emerald-900/50">
                     <FaCheckCircle /> Hired Successfully
                   </div>
                 ) : app.status === "Rejected" ? (
-                   <div className="w-full bg-red-50 text-red-600 font-black py-4 rounded-2xl flex items-center justify-center gap-2 uppercase text-[10px] tracking-[0.2em] border border-red-100">
+                   <div className="w-full bg-red-50 dark:bg-red-900/30 text-red-600 font-black py-4 rounded-2xl flex items-center justify-center gap-2 uppercase text-[10px] tracking-[0.2em] border border-red-100 dark:border-red-900/50">
                     Application Rejected
                   </div>
                 ) : (
@@ -154,7 +154,7 @@ const AppliedTutors = () => {
                     </Link>
                     <button
                       onClick={() => handleReject(app._id)}
-                      className="w-12 h-14 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all border border-red-100"
+                      className="w-12 h-14 rounded-2xl bg-red-50 dark:bg-red-900/30 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all border border-red-100 dark:border-red-900/50"
                       title="Reject Application"
                     >
                       <FaTimesCircle size={20} />

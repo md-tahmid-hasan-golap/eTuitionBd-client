@@ -56,25 +56,25 @@ const UpdateTuitions = () => {
 
   return (
     <div className="max-w-4xl mx-auto py-10 px-4">
-      <div className="bg-white rounded-[2.5rem] shadow-2xl p-8 md:p-12 border border-slate-50">
+      <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-2xl p-8 md:p-12 border border-slate-50 dark:border-slate-800">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-black text-[#0f172a] italic">
             Update <span className="text-orange-500">Tuition Post</span>
           </h2>
-          <p className="text-slate-500 mt-2 font-medium">Modify your tuition requirements</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-2 font-medium">Modify your tuition requirements</p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Subject */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 ml-1">
+              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">
                 <FaBook className="text-orange-500" /> Subject
               </label>
               <select
                 defaultValue={data?.subject}
                 {...register("subject", { required: "Select a subject" })}
-                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
               >
                 <option value="Mathematics">Mathematics</option>
                 <option value="Physics">Physics</option>
@@ -86,13 +86,13 @@ const UpdateTuitions = () => {
 
             {/* Class */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 ml-1">
+              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">
                 <FaGraduationCap className="text-orange-500" /> Class / Level
               </label>
               <select
                 defaultValue={data?.class}
                 {...register("class", { required: "Select a class" })}
-                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
               >
                 <option value="Class 1-5">Class 1-5</option>
                 <option value="Class 6-8">Class 6-8</option>
@@ -106,13 +106,13 @@ const UpdateTuitions = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Tuition Type */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 ml-1">
+              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">
                 <FaChalkboardTeacher className="text-orange-500" /> Tuition Type
               </label>
               <select
                 defaultValue={data?.tuitionType}
                 {...register("tuitionType")}
-                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
               >
                 <option value="Home Tuition">Home Tuition (Offline)</option>
                 <option value="Online Tuition">Online Tuition</option>
@@ -122,13 +122,13 @@ const UpdateTuitions = () => {
 
             {/* Salary */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 ml-1">
+              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">
                 <FaMoneyBillWave className="text-orange-500" /> Monthly Salary
               </label>
               <input
                 type="number"
                 defaultValue={data?.salary}
-                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
                 {...register("salary", { required: "Required" })}
               />
             </div>
@@ -137,13 +137,13 @@ const UpdateTuitions = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Days per Week */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 ml-1">
+              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">
                 <FaCalendarAlt className="text-orange-500" /> Days per Week
               </label>
               <select
                 defaultValue={data?.daysPerWeek}
                 {...register("daysPerWeek")}
-                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
               >
                 <option value="2 Days">2 Days</option>
                 <option value="3 Days">3 Days</option>
@@ -154,24 +154,24 @@ const UpdateTuitions = () => {
 
             {/* Location */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 ml-1">
+              <label className="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">
                 <FaMapMarkerAlt className="text-orange-500" /> Location
               </label>
               <input
                 type="text"
                 defaultValue={data?.location}
-                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+                className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
                 {...register("location", { required: "Required" })}
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700 ml-1">Details & Preferences</label>
+            <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Details & Preferences</label>
             <textarea
               rows="3"
               defaultValue={data?.description}
-              className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none"
+              className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none"
               {...register("description")}
             ></textarea>
           </div>

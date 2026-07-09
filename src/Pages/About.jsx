@@ -43,13 +43,13 @@ const About = () => {
       {/* 🎯 Our Mission Section */}
       <section className="max-w-7xl mx-auto py-20 px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div data-aos="fade-right">
-          <div className="inline-block px-4 py-1 rounded-full bg-orange-50 text-orange-600 text-xs font-black uppercase tracking-widest mb-4">
+          <div className="inline-block px-4 py-1 rounded-full bg-orange-50 dark:bg-orange-900/30 text-orange-600 text-xs font-black uppercase tracking-widest mb-4">
             Our Mission
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-[#0f172a] mb-6 leading-tight">
             Connecting Ambitions with <br /> Specialized Tutors
           </h2>
-          <p className="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
+          <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-8 font-medium">
             Our mission is to simplify the connection between students and
             tutors by providing automated workflows, digital class tracking, and
             a structured platform where academic excellence becomes accessible
@@ -75,9 +75,9 @@ const About = () => {
 
         <div className="relative" data-aos="fade-left">
           <div className="absolute inset-0 bg-orange-500 rounded-[2rem] rotate-3 scale-95 opacity-10"></div>
-          <div className="relative bg-white p-8 rounded-[2rem] shadow-2xl border border-slate-50 overflow-hidden">
+          <div className="relative bg-white dark:bg-slate-900 p-8 rounded-[2rem] shadow-2xl border border-slate-50 dark:border-slate-800 overflow-hidden">
             <div className="grid grid-cols-2 gap-4">
-              <div className="h-32 md:h-40 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 font-bold uppercase tracking-widest text-xs">
+              <div className="h-32 md:h-40 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-400 font-bold uppercase tracking-widest text-xs">
                 Reliable
               </div>
               <div className="h-32 md:h-40 bg-orange-500 rounded-2xl flex items-center justify-center text-white font-bold uppercase tracking-widest text-xs">
@@ -86,7 +86,7 @@ const About = () => {
               <div className="h-32 md:h-40 bg-[#0f172a] rounded-2xl flex items-center justify-center text-white font-bold uppercase tracking-widest text-xs">
                 Modern
               </div>
-              <div className="h-32 md:h-40 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 font-bold uppercase tracking-widest text-xs">
+              <div className="h-32 md:h-40 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-400 font-bold uppercase tracking-widest text-xs">
                 Effective
               </div>
             </div>
@@ -95,7 +95,7 @@ const About = () => {
       </section>
 
       {/* 🛠️ How It Works (Steps) */}
-      <section className="bg-slate-50 py-24 px-6">
+      <section className="bg-slate-50 dark:bg-slate-800 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-black text-[#0f172a] mb-4">
@@ -133,7 +133,7 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-black text-[#0f172a] mb-4">
             Why Choose eTuitionBd
           </h2>
-          <p className="text-slate-500 font-medium">
+          <p className="text-slate-500 dark:text-slate-400 font-medium">
             Building a community of trusted learners and expert teachers.
           </p>
         </div>
@@ -164,7 +164,7 @@ const About = () => {
 const StepCard = ({ icon, title, desc, index }) => (
   <div
     data-aos="fade-up"
-    className="bg-white p-10 rounded-[3rem] shadow-xl shadow-blue-100/20 hover:shadow-2xl transition-all border border-slate-50 relative group"
+    className="bg-white dark:bg-slate-900 p-10 rounded-[3rem] shadow-xl shadow-blue-100/20 hover:shadow-2xl transition-all border border-slate-50 dark:border-slate-800 relative group"
   >
     {/* Floating Number Badge */}
     <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-14 bg-orange-500 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
@@ -177,9 +177,9 @@ const StepCard = ({ icon, title, desc, index }) => (
     </div>
 
     <h3 className="text-2xl font-black text-[#0f172a] mb-4">{title}</h3>
-    <p className="text-slate-500 leading-relaxed font-medium text-sm">{desc}</p>
+    <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-medium text-sm">{desc}</p>
 
-    <div className="mt-6 w-12 h-1 bg-slate-100 group-hover:w-full group-hover:bg-orange-500/20 transition-all duration-500 rounded-full"></div>
+    <div className="mt-6 w-12 h-1 bg-slate-100 dark:bg-slate-800 group-hover:w-full group-hover:bg-orange-500/20 transition-all duration-500 rounded-full"></div>
   </div>
 );
 
@@ -187,13 +187,13 @@ const StepCard = ({ icon, title, desc, index }) => (
 const FeatureCard = ({ icon, title, desc }) => (
   <div
     data-aos="zoom-in"
-    className="text-center p-8 rounded-[2.5rem] hover:bg-white hover:shadow-2xl transition-all border border-transparent hover:border-slate-50 group"
+    className="text-center p-8 rounded-[2.5rem] hover:bg-white dark:bg-slate-900 hover:shadow-2xl transition-all border border-transparent hover:border-slate-50 dark:border-slate-800 group"
   >
-    <div className="w-20 h-20 bg-white shadow-xl rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+    <div className="w-20 h-20 bg-white dark:bg-slate-900 shadow-xl rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
       {icon}
     </div>
     <h3 className="text-xl font-bold text-[#0f172a] mb-3">{title}</h3>
-    <p className="text-slate-500 text-sm leading-relaxed font-medium">{desc}</p>
+    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">{desc}</p>
   </div>
 );
 

@@ -49,7 +49,7 @@ const cardVariants = {
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-white dark:bg-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -65,7 +65,7 @@ const WhyChooseUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-5xl font-black text-[#0f172a] mt-2"
           >
-            Why Choose <span className="text-blue-900 italic">eTuition</span>
+            Why Choose <span className="text-blue-900 dark:text-blue-100 italic">eTuition</span>
             <span className="text-orange-500">Bd</span>
           </MotionH2>
           <div className="w-20 h-1.5 bg-blue-900 mx-auto mt-4 rounded-full"></div>
@@ -82,10 +82,10 @@ const WhyChooseUs = () => {
               viewport={{ once: true }}
               variants={cardVariants}
               whileHover={{ y: -10 }}
-              className="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:bg-white transition-all duration-300 group"
+              className="bg-gray-50 dark:bg-slate-800 p-8 rounded-3xl border border-gray-100 dark:border-slate-700 shadow-sm hover:shadow-xl hover:bg-white dark:bg-slate-900 transition-all duration-300 group"
             >
               {/* Icon Container */}
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:bg-blue-900 transition-colors duration-300">
+              <div className="w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:bg-blue-900 transition-colors duration-300">
                 <div className="group-hover:text-white transition-colors duration-300">
                   {feature.icon}
                 </div>
@@ -95,7 +95,7 @@ const WhyChooseUs = () => {
               <h3 className="text-xl font-bold mb-3 text-[#0f172a]">
                 {feature.title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 {feature.description}
               </p>
 

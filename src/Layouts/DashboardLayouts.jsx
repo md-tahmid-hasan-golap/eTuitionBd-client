@@ -17,6 +17,7 @@ import {
 import { AuthContext } from "../firebase/AuthContext";
 import toast from "react-hot-toast";
 import useRole from "../Hooks/useRole";
+import ThemeToggle from "../Components/ThemeToggle";
 
 const DashboardLayouts = () => {
   const location = useLocation();
@@ -118,34 +119,35 @@ const DashboardLayouts = () => {
   else menuItems = [...commonMenu, ...studentMenu, ...sharedMenu];
 
   return (
-    <div className="bg-[#fcfcfd] min-h-screen font-sans">
+    <div className="bg-[#fcfcfd] dark:bg-slate-900 min-h-screen font-sans text-slate-800 dark:text-slate-200">
       <div className="drawer lg:drawer-open">
         <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
 
         {/* --- Main Content Area --- */}
         <div className="drawer-content flex flex-col">
-          <header className="navbar bg-white border-b border-slate-100 px-6 py-4 sticky top-0 z-30 shadow-sm">
+          <header className="navbar bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-6 py-4 sticky top-0 z-30 shadow-sm">
             <div className="flex-none lg:hidden">
-              <label htmlFor="dashboard-drawer" className="btn btn-ghost btn-square text-[#0f172a]">
+              <label htmlFor="dashboard-drawer" className="btn btn-ghost btn-square text-[#0f172a] dark:text-slate-200">
                 <FaBars size={20} />
               </label>
             </div>
 
             <div className="flex-1 px-2">
-              <h2 className="font-black text-[#0f172a] text-lg tracking-tight uppercase">
+              <h2 className="font-black text-[#0f172a] dark:text-slate-100 text-lg tracking-tight uppercase">
                 {user?.displayName?.split(" ")[0] || "User"}'s{" "}
                 <span className="text-orange-500">Panel</span>
               </h2>
             </div>
 
             <div className="flex gap-4 items-center">
+              <ThemeToggle />
               <Link
                 to="/"
-                className="btn btn-sm btn-ghost rounded-xl text-xs font-bold text-slate-500 hover:text-orange-500 hidden md:flex"
+                className="btn btn-sm btn-ghost rounded-xl text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-orange-500 hidden md:flex"
               >
                 <FaHome /> Main Site
               </Link>
-              <div className="flex items-center gap-3 ml-2 border-l pl-4 border-slate-100">
+              <div className="flex items-center gap-3 ml-2 border-l pl-4 border-slate-100 dark:border-slate-700">
                 <img
                   src={user?.photoURL || "https://i.ibb.co/vBR649p/user-placeholder.png"}
                   className="w-10 h-10 rounded-full border-2 border-orange-500 object-cover"
@@ -186,7 +188,7 @@ const DashboardLayouts = () => {
                       className={`flex items-center gap-4 px-5 py-3.5 rounded-2xl font-bold transition-all duration-300 ${
                         location.pathname === item.path
                           ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-                          : "text-slate-400 hover:bg-white/5 hover:text-white"
+                          : "text-slate-400 hover:bg-white/5 dark:bg-slate-800/30 hover:text-white"
                       }`}
                     >
                       <span className="text-lg">{item.icon}</span>

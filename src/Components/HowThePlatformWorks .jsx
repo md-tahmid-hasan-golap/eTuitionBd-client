@@ -42,7 +42,7 @@ const cardVariants = {
 
 const HowThePlatformWorks = () => {
   return (
-    <section className="py-24 bg-gray-50 overflow-hidden">
+    <section className="py-24 bg-gray-50 dark:bg-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -56,7 +56,7 @@ const HowThePlatformWorks = () => {
             <span className="text-orange-500 italic">Works</span>
           </MotionH2>
           <div className="w-24 h-1.5 bg-blue-900 mx-auto mt-4 rounded-full"></div>
-          <p className="text-gray-500 mt-6 max-w-xl mx-auto">
+          <p className="text-gray-500 dark:text-gray-400 mt-6 max-w-xl mx-auto">
             Our simplified process ensures a seamless connection between
             qualified tutors and ambitious students.
           </p>
@@ -76,7 +76,7 @@ const HowThePlatformWorks = () => {
               viewport={{ once: true }}
               variants={cardVariants}
               whileHover={{ y: -10 }}
-              className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 flex flex-col items-center text-center relative z-10 hover:shadow-2xl hover:border-blue-100 transition-all duration-300 group"
+              className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-sm border border-gray-100 dark:border-slate-700 flex flex-col items-center text-center relative z-10 hover:shadow-2xl hover:border-blue-100 dark:border-blue-900/50 transition-all duration-300 group"
             >
               {/* Step Number Badge */}
               <div className="absolute -top-5 bg-orange-500 text-white font-black px-4 py-1 rounded-lg shadow-lg rotate-3 group-hover:rotate-0 transition-transform">
@@ -84,19 +84,19 @@ const HowThePlatformWorks = () => {
               </div>
 
               {/* Icon Circle */}
-              <div className="w-20 h-20 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center mb-6 shadow-inner group-hover:bg-blue-900 group-hover:text-white transition-colors duration-500">
+              <div className="w-20 h-20 bg-blue-50 dark:bg-blue-900/30 text-blue-900 dark:text-blue-100 rounded-full flex items-center justify-center mb-6 shadow-inner group-hover:bg-blue-900 group-hover:text-white transition-colors duration-500">
                 {step.icon}
               </div>
 
-              <h3 className="text-2xl font-bold text-[#0f172a] mb-4 group-hover:text-blue-900 transition-colors">
+              <h3 className="text-2xl font-bold text-[#0f172a] mb-4 group-hover:text-blue-900 dark:text-blue-100 transition-colors">
                 {step.title}
               </h3>
-              <p className="text-gray-500 leading-relaxed text-sm">
+              <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
                 {step.description}
               </p>
 
               {/* Decorative Circle Background */}
-              <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-orange-50 rounded-full -z-10 opacity-50 group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-orange-50 dark:bg-orange-900/30 rounded-full -z-10 opacity-50 group-hover:scale-150 transition-transform duration-700"></div>
             </MotionDiv>
           ))}
         </div>

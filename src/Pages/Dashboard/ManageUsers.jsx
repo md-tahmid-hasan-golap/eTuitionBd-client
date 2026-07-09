@@ -64,28 +64,28 @@ const ManageUsers = () => {
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="space-y-1">
               <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Full Name</label>
-              <input id="swal-name" class="swal2-input !m-0 !w-full rounded-2xl border-slate-200 text-sm font-bold" value="${user.name || ''}" placeholder="John Doe">
+              <input id="swal-name" class="swal2-input !m-0 !w-full rounded-2xl border-slate-200 dark:border-slate-700 text-sm font-bold" value="${user.name || ''}" placeholder="John Doe">
             </div>
             <div class="space-y-1">
               <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Phone Number</label>
-              <input id="swal-phone" class="swal2-input !m-0 !w-full rounded-2xl border-slate-200 text-sm font-bold" value="${user.phone || ''}" placeholder="01XXXXXXXXX">
+              <input id="swal-phone" class="swal2-input !m-0 !w-full rounded-2xl border-slate-200 dark:border-slate-700 text-sm font-bold" value="${user.phone || ''}" placeholder="01XXXXXXXXX">
             </div>
           </div>
           <div class="space-y-1">
             <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Profile Image URL</label>
-            <input id="swal-image" class="swal2-input !m-0 !w-full rounded-2xl border-slate-200 text-sm font-bold" value="${user.photoUrl || ''}" placeholder="https://example.com/photo.jpg">
+            <input id="swal-image" class="swal2-input !m-0 !w-full rounded-2xl border-slate-200 dark:border-slate-700 text-sm font-bold" value="${user.photoUrl || ''}" placeholder="https://example.com/photo.jpg">
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="space-y-1">
                 <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Account Status</label>
-                <select id="swal-status" class="swal2-select !m-0 !w-full rounded-2xl border-slate-200 text-sm font-bold">
+                <select id="swal-status" class="swal2-select !m-0 !w-full rounded-2xl border-slate-200 dark:border-slate-700 text-sm font-bold">
                   <option value="Active" ${user.status === 'Active' ? 'selected' : ''}>Active</option>
                   <option value="Blocked" ${user.status === 'Blocked' ? 'selected' : ''}>Blocked</option>
                 </select>
             </div>
             <div class="space-y-1">
                 <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Verification</label>
-                <select id="swal-verified" class="swal2-select !m-0 !w-full rounded-2xl border-slate-200 text-sm font-bold">
+                <select id="swal-verified" class="swal2-select !m-0 !w-full rounded-2xl border-slate-200 dark:border-slate-700 text-sm font-bold">
                   <option value="true" ${user.isVerified ? 'selected' : ''}>Verified</option>
                   <option value="false" ${!user.isVerified ? 'selected' : ''}>Not Verified</option>
                 </select>
@@ -135,13 +135,13 @@ const ManageUsers = () => {
         <h2 className="text-4xl font-black text-[#0f172a] tracking-tight italic uppercase">
           Manage <span className="text-orange-500">Users</span>
         </h2>
-        <p className="text-slate-500 font-medium mt-2">Manage roles and accounts for all platform users.</p>
+        <p className="text-slate-500 dark:text-slate-400 font-medium mt-2">Manage roles and accounts for all platform users.</p>
       </div>
 
-      <div className="bg-white rounded-[2rem] shadow-sm border border-slate-100 overflow-hidden">
+      <div className="bg-white dark:bg-slate-900 rounded-[2rem] shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="table w-full">
-            <thead className="bg-slate-50 text-slate-500 text-xs uppercase tracking-widest font-black">
+            <thead className="bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-widest font-black">
               <tr>
                 <th className="py-5 px-6">Name</th>
                 <th className="py-5 px-6">Email</th>
@@ -151,9 +151,9 @@ const ManageUsers = () => {
                 <th className="py-5 px-6 text-center">Actions</th>
               </tr>
             </thead>
-            <tbody className="text-sm font-medium text-slate-700">
+            <tbody className="text-sm font-medium text-slate-700 dark:text-slate-300">
               {users.map((user) => (
-                <tr key={user._id} className="border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                <tr key={user._id} className="border-b border-slate-50 dark:border-slate-800 hover:bg-slate-50 dark:bg-slate-800 transition-colors">
                   <td className="py-5 px-6">
                     <div className="flex items-center gap-3">
                       <div className="avatar">
@@ -167,9 +167,9 @@ const ManageUsers = () => {
                   <td className="py-5 px-6">{user.email}</td>
                   <td className="py-5 px-6 text-center">
                     <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
-                      user.role?.toLowerCase() === "admin" ? "bg-purple-50 text-purple-600" :
-                      user.role?.toLowerCase() === "tutor" ? "bg-blue-50 text-blue-600" :
-                      "bg-orange-50 text-orange-600"
+                      user.role?.toLowerCase() === "admin" ? "bg-purple-50 dark:bg-purple-900/30 text-purple-600" :
+                      user.role?.toLowerCase() === "tutor" ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600" :
+                      "bg-orange-50 dark:bg-orange-900/30 text-orange-600"
                     }`}>
                       {user.role?.toLowerCase() === "admin" ? <FaUserShield /> : user.role?.toLowerCase() === "tutor" ? <FaUserGraduate /> : <FaUser />}
                       {user.role || "Student"}
@@ -177,7 +177,7 @@ const ManageUsers = () => {
                   </td>
                   <td className="py-5 px-6 text-center">
                     <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
-                      user.isVerified ? "bg-emerald-50 text-emerald-600" : "bg-slate-50 text-slate-400"
+                      user.isVerified ? "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600" : "bg-slate-50 dark:bg-slate-800 text-slate-400"
                     }`}>
                       {user.isVerified ? <FaCheckCircle /> : <FaTimesCircle />}
                       {user.isVerified ? "Verified" : "Unverified"}
@@ -185,14 +185,14 @@ const ManageUsers = () => {
                   </td>
                   <td className="py-5 px-6 text-center">
                     <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
-                      user.status === 'Blocked' ? "bg-red-50 text-red-600" : "bg-blue-50 text-blue-600"
+                      user.status === 'Blocked' ? "bg-red-50 dark:bg-red-900/30 text-red-600" : "bg-blue-50 dark:bg-blue-900/30 text-blue-600"
                     }`}>
                       {user.status || 'Active'}
                     </span>
                   </td>
                   <td className="py-5 px-6 text-center">
                     <div className="flex items-center justify-center gap-2">
-                      <button onClick={() => handleEditUser(user)} className="btn btn-sm btn-circle bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white border-none transition-all" title="Edit Details">
+                      <button onClick={() => handleEditUser(user)} className="btn btn-sm btn-circle bg-blue-50 dark:bg-blue-900/30 text-blue-600 hover:bg-blue-600 hover:text-white border-none transition-all" title="Edit Details">
                         <FaEdit />
                       </button>
                       {user.role?.toLowerCase() !== "admin" && (
@@ -201,11 +201,11 @@ const ManageUsers = () => {
                         </button>
                       )}
                       {user.role?.toLowerCase() !== "tutor" && (
-                        <button onClick={() => handleRoleChange(user._id, "Tutor")} className="btn btn-xs bg-blue-100 text-blue-600 hover:bg-blue-200 border-none">
+                        <button onClick={() => handleRoleChange(user._id, "Tutor")} className="btn btn-xs bg-blue-100 dark:bg-blue-900/50 text-blue-600 hover:bg-blue-200 border-none">
                           Make Tutor
                         </button>
                       )}
-                      <button onClick={() => handleDelete(user._id)} className="btn btn-sm btn-circle bg-slate-100 text-slate-500 hover:bg-red-500 hover:text-white border-none ml-2 transition-all" title="Delete User">
+                      <button onClick={() => handleDelete(user._id)} className="btn btn-sm btn-circle bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-red-500 hover:text-white border-none ml-2 transition-all" title="Delete User">
                         <FaTrashAlt />
                       </button>
                     </div>

@@ -84,7 +84,7 @@ const MyTuitions = () => {
           <h2 className="text-3xl md:text-5xl font-black text-[#0f172a] italic uppercase tracking-tighter">
             My <span className="text-orange-500">Postings</span>
           </h2>
-          <p className="text-slate-500 mt-2 font-medium">Manage your tuition posts here.</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-2 font-medium">Manage your tuition posts here.</p>
         </div>
         <Link
           to="/dashboard/post-tuition"
@@ -98,7 +98,7 @@ const MyTuitions = () => {
       {loading && user?.email ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="bg-white p-6 rounded-[2.5rem] border border-slate-100 shadow-sm animate-pulse">
+            <div key={i} className="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm animate-pulse">
               <div className="h-40 bg-slate-200 rounded-[2rem] mb-6"></div>
               <div className="h-6 bg-slate-200 rounded-full w-3/4 mb-4"></div>
               <div className="h-4 bg-slate-200 rounded-full w-1/2 mb-8"></div>
@@ -106,7 +106,7 @@ const MyTuitions = () => {
           ))}
         </div>
       ) : isError ? (
-        <div className="text-center py-20 bg-white rounded-[2.5rem] border border-red-100 shadow-sm flex flex-col items-center gap-4">
+        <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-red-100 dark:border-red-900/50 shadow-sm flex flex-col items-center gap-4">
           <p className="text-red-500 text-xl font-bold italic">Oops! Couldn't load your postings.</p>
           <button onClick={() => refetch()} className="btn bg-red-500 hover:bg-red-600 text-white rounded-xl px-8">Retry</button>
         </div>
@@ -122,7 +122,7 @@ const MyTuitions = () => {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center py-24 bg-white rounded-[3rem] border-2 border-dashed border-slate-200 shadow-sm">
+        <div className="flex flex-col items-center justify-center py-24 bg-white dark:bg-slate-900 rounded-[3rem] border-2 border-dashed border-slate-200 dark:border-slate-700 shadow-sm">
           <FaFolderOpen className="text-slate-200 text-8xl mb-6" />
           <h3 className="text-2xl font-black text-slate-400 italic uppercase">No Data Found</h3>
         </div>

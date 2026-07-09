@@ -8,11 +8,11 @@ const Spinner = ({ text = "Preparing your dashboard..." }) => {
         {/* Animated Spinner Core - Scaled for Mobile */}
         <div className="relative w-20 h-20 md:w-24 md:h-24 mb-6 md:mb-8">
           {/* Outer Rotating Ring */}
-          <div className="absolute inset-0 rounded-full border-[3px] border-slate-100"></div>
+          <div className="absolute inset-0 rounded-full border-[3px] border-slate-100 dark:border-slate-700"></div>
           <div className="absolute inset-0 rounded-full border-[3px] border-t-orange-500 border-r-transparent border-b-transparent border-l-transparent animate-spin"></div>
 
           {/* Middle Ring (Reverse Rotation) */}
-          <div className="absolute inset-3 md:inset-4 rounded-full border-[3px] border-slate-100"></div>
+          <div className="absolute inset-3 md:inset-4 rounded-full border-[3px] border-slate-100 dark:border-slate-700"></div>
           <div className="absolute inset-3 md:inset-4 rounded-full border-[3px] border-t-transparent border-r-transparent border-b-[#0f172a] border-l-transparent animate-spin-reverse"></div>
 
           {/* Center Pulsing Square */}

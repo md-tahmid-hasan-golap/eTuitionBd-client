@@ -8,7 +8,7 @@ const PrivateRouter = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-slate-900">
         <div className="flex flex-col items-center gap-4">
           <span className="loading loading-spinner loading-lg text-orange-500"></span>
           <progress className="progress w-56 progress-warning"></progress>

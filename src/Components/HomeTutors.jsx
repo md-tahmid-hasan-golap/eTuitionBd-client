@@ -28,7 +28,7 @@ const HomeTutors = () => {
   });
 
   return (
-    <div className="py-24 bg-white">
+    <div className="py-24 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="space-y-4">
@@ -39,13 +39,13 @@ const HomeTutors = () => {
             <h2 className="text-4xl md:text-6xl font-black text-[#0f172a] tracking-tight uppercase italic">
               Latest Expert <span className="text-blue-600">Tutors</span>
             </h2>
-            <p className="text-slate-500 font-medium max-w-xl">
+            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-xl">
               Meet our most recently joined professionals who are ready to help you achieve your academic goals.
             </p>
           </div>
           <Link 
             to="/tutors" 
-            className="group flex items-center gap-3 bg-slate-50 hover:bg-[#0f172a] text-[#0f172a] hover:text-white px-8 py-4 rounded-2xl font-black transition-all border border-slate-100 shadow-sm"
+            className="group flex items-center gap-3 bg-slate-50 dark:bg-slate-800 hover:bg-[#0f172a] text-[#0f172a] hover:text-white px-8 py-4 rounded-2xl font-black transition-all border border-slate-100 dark:border-slate-700 shadow-sm"
           >
             View All Tutors <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
           </Link>
@@ -54,15 +54,15 @@ const HomeTutors = () => {
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="h-[400px] bg-slate-50 animate-pulse rounded-[3rem]"></div>
+              <div key={i} className="h-[400px] bg-slate-50 dark:bg-slate-800 animate-pulse rounded-[3rem]"></div>
             ))}
           </div>
         ) : isError ? (
-          <div className="text-center py-20 bg-red-50 rounded-[3rem] border border-red-100">
+          <div className="text-center py-20 bg-red-50 dark:bg-red-900/30 rounded-[3rem] border border-red-100 dark:border-red-900/50">
             <p className="text-red-500 font-black italic">Failed to load expert tutors.</p>
           </div>
         ) : tutors.length === 0 ? (
-          <div className="text-center py-20 bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200">
+          <div className="text-center py-20 bg-slate-50 dark:bg-slate-800 rounded-[3rem] border-2 border-dashed border-slate-200 dark:border-slate-700">
             <FaUserTie className="mx-auto text-slate-200 text-6xl mb-4" />
             <p className="text-slate-400 font-black uppercase tracking-widest italic">No tutors available yet</p>
           </div>

@@ -38,19 +38,19 @@ const faqData = [
 
 const FAQ = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-slate-800">
       <div className="max-w-4xl mx-auto px-6">
         {/* Section Heading */}
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
-            <span className="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+            <span className="bg-blue-100 dark:bg-blue-900/50 text-blue-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2">
               <FaQuestionCircle /> FAQ Center
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-[#0f172a] mb-4">
             Frequently Asked <span className="text-orange-500">Questions</span>
           </h2>
-          <p className="text-gray-500 max-w-lg mx-auto">
+          <p className="text-gray-500 dark:text-gray-400 max-w-lg mx-auto">
             Find answers to common questions about our platform's workflow,
             tutor verification, and payment security.
           </p>
@@ -61,7 +61,7 @@ const FAQ = () => {
           {faqData.map((item, index) => (
             <div
               key={index}
-              className="collapse collapse-plus bg-white border border-gray-100 shadow-sm rounded-2xl group focus-within:border-blue-400 transition-all duration-300"
+              className="collapse collapse-plus bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-700 shadow-sm rounded-2xl group focus-within:border-blue-400 transition-all duration-300"
             >
               <input
                 type="radio"
@@ -73,8 +73,8 @@ const FAQ = () => {
                 {item.question}
               </div>
 
-              <div className="collapse-content px-6 text-gray-600 leading-relaxed">
-                <div className="pb-4 pt-2 border-t border-gray-50">
+              <div className="collapse-content px-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <div className="pb-4 pt-2 border-t border-gray-50 dark:border-slate-800">
                   {item.answer}
                 </div>
               </div>

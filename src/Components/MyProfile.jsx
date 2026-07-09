@@ -73,8 +73,8 @@ const MyProfile = () => {
 
   const roleColor =
     role?.toLowerCase() === "tutor"
-      ? "text-blue-600 bg-blue-50"
-      : "text-orange-600 bg-orange-50";
+      ? "text-blue-600 bg-blue-50 dark:bg-blue-900/30"
+      : "text-orange-600 bg-orange-50 dark:bg-orange-900/30";
   const badgeColor =
     role?.toLowerCase() === "tutor" ? "bg-blue-500" : "bg-orange-500";
 
@@ -90,7 +90,7 @@ const MyProfile = () => {
             <h2 className="text-3xl font-black text-[#0f172a] tracking-tight">
               My <span className="text-orange-500">Profile</span>
             </h2>
-            <p className="text-slate-500 font-medium mt-1">
+            <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">
               Manage your personal information.
             </p>
           </div>
@@ -110,7 +110,7 @@ const MyProfile = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Side: User Avatar */}
             <div className="lg:col-span-1" data-aos="fade-right">
-              <div className="bg-white p-8 rounded-[2.5rem] shadow-xl shadow-blue-100/20 border border-slate-50 flex flex-col items-center">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-xl shadow-blue-100/20 border border-slate-50 dark:border-slate-800 flex flex-col items-center">
                 <div className="relative group">
                   <div
                     className={`absolute inset-0 ${badgeColor} rounded-full blur-xl opacity-20 transition-opacity`}
@@ -137,7 +137,7 @@ const MyProfile = () => {
 
             {/* Right Side: Details */}
             <div className="lg:col-span-2 space-y-6" data-aos="fade-left">
-              <div className="bg-white p-8 rounded-[2.5rem] shadow-xl shadow-blue-100/20 border border-slate-50">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-xl shadow-blue-100/20 border border-slate-50 dark:border-slate-800">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <InfoBox
                     icon={<FaIdBadge />}
@@ -163,13 +163,13 @@ const MyProfile = () => {
                 </div>
 
                 {role?.toLowerCase() === "tutor" && (
-                  <div className="mt-8 space-y-6 pt-6 border-t border-slate-100">
+                  <div className="mt-8 space-y-6 pt-6 border-t border-slate-100 dark:border-slate-700">
                     <div>
                       <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-2 mb-2">
                         <FaGraduationCap className="text-blue-500" />{" "}
                         Qualifications
                       </h4>
-                      <p className="text-sm font-medium text-slate-700 bg-slate-50 p-4 rounded-xl">
+                      <p className="text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 p-4 rounded-xl">
                         {dbUser?.qualifications ||
                           "No qualifications added yet."}
                       </p>
@@ -179,7 +179,7 @@ const MyProfile = () => {
                         <FaInfoCircle className="text-orange-500" /> Bio / About
                         Me
                       </h4>
-                      <p className="text-sm font-medium text-slate-700 bg-slate-50 p-4 rounded-xl leading-relaxed">
+                      <p className="text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 p-4 rounded-xl leading-relaxed">
                         {dbUser?.bio || "Write a short bio about yourself..."}
                       </p>
                     </div>
@@ -195,13 +195,13 @@ const MyProfile = () => {
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-10 bg-[#0f172a]/40 backdrop-blur-sm overflow-y-auto">
           <div
-            className="bg-white w-full max-w-lg p-8 rounded-[2.5rem] shadow-2xl relative animate-in fade-in zoom-in duration-300 my-auto"
+            className="bg-white dark:bg-slate-900 w-full max-w-lg p-8 rounded-[2.5rem] shadow-2xl relative animate-in fade-in zoom-in duration-300 my-auto"
             data-aos="zoom-in"
           >
             <h3 className="text-2xl font-black text-[#0f172a] mb-2">
               Update Profile
             </h3>
-            <p className="text-slate-500 text-sm mb-6">
+            <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">
               Change your personal and professional details.
             </p>
 
@@ -217,7 +217,7 @@ const MyProfile = () => {
                       name="name"
                       required
                       defaultValue={user?.displayName}
-                      className="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-50 border border-slate-100 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium"
+                      className="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium"
                     />
                   </div>
                 </div>
@@ -231,7 +231,7 @@ const MyProfile = () => {
                       name="phone"
                       defaultValue={dbUser?.phone}
                       placeholder="e.g. +880170000000"
-                      className="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-50 border border-slate-100 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium"
+                      className="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium"
                     />
                   </div>
                 </div>
@@ -247,7 +247,7 @@ const MyProfile = () => {
                     name="photo"
                     required
                     defaultValue={user?.photoURL}
-                    className="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-50 border border-slate-100 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium"
+                    className="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium"
                   />
                 </div>
               </div>
@@ -263,7 +263,7 @@ const MyProfile = () => {
                       rows="2"
                       defaultValue={dbUser?.qualifications}
                       placeholder="e.g. BSc in CS from BUET..."
-                      className="w-full px-5 py-3 rounded-2xl bg-slate-50 border border-slate-100 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium resize-none"
+                      className="w-full px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium resize-none"
                     />
                   </div>
                   <div className="space-y-1">
@@ -275,7 +275,7 @@ const MyProfile = () => {
                       rows="3"
                       defaultValue={dbUser?.bio}
                       placeholder="Write something about yourself..."
-                      className="w-full px-5 py-3 rounded-2xl bg-slate-50 border border-slate-100 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium resize-none"
+                      className="w-full px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all text-sm font-medium resize-none"
                     />
                   </div>
                 </>
@@ -285,7 +285,7 @@ const MyProfile = () => {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="flex-1 py-3.5 rounded-2xl font-bold text-slate-500 bg-slate-100 hover:bg-slate-200 transition-all"
+                  className="flex-1 py-3.5 rounded-2xl font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-all"
                 >
                   Cancel
                 </button>
@@ -315,7 +315,7 @@ const InfoBox = ({ icon, label, value, color = "text-[#0f172a]" }) => (
     <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">
       {label}
     </p>
-    <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl border border-transparent">
+    <div className="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-transparent">
       <span className="text-orange-500 text-lg">{icon}</span>
       <p className={`font-bold text-sm truncate ${color}`}>{value}</p>
     </div>

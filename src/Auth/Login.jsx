@@ -77,7 +77,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full max-w-md bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl shadow-blue-100/20 border border-slate-100 mx-auto my-10">
+    <div className="w-full max-w-md bg-white dark:bg-slate-900 p-8 md:p-10 rounded-[2.5rem] shadow-2xl shadow-blue-100/20 border border-slate-100 dark:border-slate-700 mx-auto my-10">
       <div className="flex justify-center -mt-4 mb-2">
         <Lottie animationData={loginLotti} loop={true} className="w-32 h-32" />
       </div>
@@ -92,11 +92,11 @@ const Login = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Email Field */}
         <div className="space-y-1">
-          <label className="text-sm font-bold text-slate-700 ml-1">Email</label>
+          <label className="text-sm font-bold text-slate-700 dark:text-slate-300 ml-1">Email</label>
           <input
             type="email"
             placeholder="example@mail.com"
-            className="w-full px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none transition-all"
+            className="w-full px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all"
             {...register("email", { required: "Email is required" })}
           />
           {errors.email && (
@@ -109,7 +109,7 @@ const Login = () => {
         {/* Password Field with Show/Hide Toggle */}
         <div className="space-y-1">
           <div className="flex justify-between items-center ml-1">
-            <label className="text-sm font-bold text-slate-700">Password</label>
+            <label className="text-sm font-bold text-slate-700 dark:text-slate-300">Password</label>
             <button
               type="button"
               className="text-xs text-orange-600 font-bold hover:underline"
@@ -121,7 +121,7 @@ const Login = () => {
             <input
               type={showPassword ? "text" : "password"} // কন্ডিশনাল টাইপ
               placeholder="••••••••"
-              className="w-full px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none transition-all text-slate-800"
+              className="w-full px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all text-slate-800 dark:text-slate-200"
               {...register("password", { required: "Password is required" })}
             />
             {/* Eye Toggle Button */}
@@ -156,12 +156,12 @@ const Login = () => {
       <button
         type="button"
         onClick={handleGoogleLogin}
-        className="w-full flex items-center justify-center gap-3 bg-white border border-slate-200 py-3 rounded-2xl hover:bg-slate-50 transition-all font-bold text-slate-700"
+        className="w-full flex items-center justify-center gap-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 py-3 rounded-2xl hover:bg-slate-50 dark:bg-slate-800 transition-all font-bold text-slate-700 dark:text-slate-300"
       >
         <FcGoogle size={20} /> Login with Google
       </button>
 
-      <p className="mt-8 text-center text-sm font-medium text-slate-500">
+      <p className="mt-8 text-center text-sm font-medium text-slate-500 dark:text-slate-400">
         Don't have an account?{" "}
         <Link
           to="/register"

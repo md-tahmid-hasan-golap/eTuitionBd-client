@@ -11,6 +11,7 @@ import {
   LuUsers,
 } from "react-icons/lu";
 import useRole from "../Hooks/useRole";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -40,10 +41,9 @@ const Navbar = () => {
           <NavLink
             to={link.path}
             className={({ isActive }) =>
-              `relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
-                isActive
-                  ? "text-blue-700 font-bold"
-                  : "text-gray-600 hover:text-blue-600"
+              `relative px-3 py-2 text-sm font-medium transition-all duration-300 ${isActive
+                ? "text-blue-700 dark:text-blue-400 font-bold"
+                : "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
               }`
             }
           >
@@ -62,12 +62,12 @@ const Navbar = () => {
   );
 
   return (
-    <div className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <div className="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 shadow-sm">
       <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16">
         {/* Left: Logo & Mobile Toggle */}
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden p-2 mr-2">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden p-2 mr-2 dark:text-gray-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -85,7 +85,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-white rounded-box w-56 border border-gray-100"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-white dark:bg-slate-800 rounded-box w-56 border border-gray-100 dark:border-slate-700"
             >
               {navLinks}
             </ul>
@@ -99,7 +99,7 @@ const Navbar = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="text-xl md:text-2xl font-black tracking-tight text-blue-900">
+            <span className="text-xl md:text-2xl font-black tracking-tight text-blue-900 dark:text-blue-100">
               eTuition<span className="text-orange-500">Bd</span>
             </span>
           </Link>
@@ -111,12 +111,13 @@ const Navbar = () => {
         </div>
 
         {/* Right: Auth Buttons / Profile */}
-        <div className="navbar-end gap-3">
+        <div className="navbar-end gap-3 flex items-center">
+          <ThemeToggle />
           {!user ? (
             <div className="flex items-center gap-2">
               <Link
                 to="/login"
-                className="hidden sm:inline-block px-4 py-2 text-sm font-semibold text-blue-900 hover:text-blue-700 transition"
+                className="hidden sm:inline-block px-4 py-2 text-sm font-semibold text-blue-900 dark:text-blue-100 hover:text-blue-700 dark:hover:text-blue-300 transition"
               >
                 Sign In
               </Link>
@@ -131,7 +132,7 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <label
                 tabIndex={0}
-                className="btn btn-ghost btn-circle avatar online p-0 border-2 border-blue-100 hover:border-blue-400"
+                className="btn btn-ghost btn-circle avatar online p-0 border-2 border-blue-100 dark:border-blue-900/50 hover:border-blue-400"
               >
                 <div className="w-10 rounded-full">
                   <img
@@ -142,13 +143,13 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow-2xl menu menu-sm dropdown-content bg-white rounded-2xl w-64 border border-gray-100"
+                className="mt-3 z-[1] p-2 shadow-2xl menu menu-sm dropdown-content bg-white dark:bg-slate-800 rounded-2xl w-64 border border-gray-100 dark:border-slate-700"
               >
-                <li className="px-4 py-3 border-b border-gray-50 mb-2">
-                  <p className="font-bold text-blue-900 text-base">
+                <li className="px-4 py-3 border-b border-gray-50 dark:border-slate-700 mb-2">
+                  <p className="font-bold text-blue-900 dark:text-blue-100 text-base">
                     {user.displayName || "User Name"}
                   </p>
-                  <p className="text-xs text-gray-500 truncate">{user.email}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{user.email}</p>
                   <div className="badge badge-primary badge-outline mt-2 text-[10px] uppercase font-bold tracking-wider">
                     {role || "Student"}
                   </div>
@@ -157,7 +158,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/dashboard"
-                    className="flex items-center gap-3 py-3 hover:bg-blue-50 text-gray-700 rounded-lg"
+                    className="flex items-center gap-3 py-3 hover:bg-blue-50 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-200 rounded-lg"
                   >
                     <LuLayoutDashboard className="text-blue-600 text-lg" />
                     Dashboard
@@ -166,19 +167,19 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/profile-settings"
-                    className="flex items-center gap-3 py-3 hover:bg-blue-50 text-gray-700 rounded-lg"
+                    className="flex items-center gap-3 py-3 hover:bg-blue-50 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-200 rounded-lg"
                   >
                     <LuUser className="text-blue-600 text-lg" />
                     My Profile
                   </Link>
                 </li>
 
-                <div className="divider my-1 h-px bg-gray-100"></div>
+                <div className="divider my-1 h-px bg-gray-100 dark:bg-slate-700"></div>
 
                 <li>
                   <button
                     onClick={handleLogout}
-                    className="flex items-center gap-3 py-3 text-red-600 hover:bg-red-50 rounded-lg font-semibold"
+                    className="flex items-center gap-3 py-3 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-slate-700 rounded-lg font-semibold"
                   >
                     <LuLogOut className="text-lg" />
                     Logout

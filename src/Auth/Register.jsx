@@ -80,7 +80,7 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full max-w-[550px] bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl border border-slate-100 mx-auto my-10 font-sans">
+    <div className="w-full max-w-[550px] bg-white dark:bg-slate-900 p-8 md:p-10 rounded-[2.5rem] shadow-2xl border border-slate-100 dark:border-slate-700 mx-auto my-10 font-sans">
       <div className="flex justify-center -mt-4 mb-2">
         <Lottie
           animationData={registerLottie}
@@ -100,24 +100,24 @@ const Register = () => {
         {/* Name & Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-1">
+            <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">
               Full Name
             </label>
             <input
               type="text"
               placeholder="John Doe"
-              className="w-full px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none text-sm transition-all text-slate-800"
+              className="w-full px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none text-sm transition-all text-slate-800 dark:text-slate-200"
               {...register("name", { required: true })}
             />
           </div>
           <div className="space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-1">
+            <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">
               Phone Number
             </label>
             <input
               type="tel"
               placeholder="01XXXXXXXXX"
-              className="w-full px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none text-sm transition-all text-slate-800"
+              className="w-full px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none text-sm transition-all text-slate-800 dark:text-slate-200"
               {...register("phone", { required: true })}
             />
           </div>
@@ -126,22 +126,22 @@ const Register = () => {
         {/* Email & Role */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-1">
+            <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">
               Email Address
             </label>
             <input
               type="email"
               placeholder="example@mail.com"
-              className="w-full px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none text-sm transition-all text-slate-800"
+              className="w-full px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none text-sm transition-all text-slate-800 dark:text-slate-200"
               {...register("email", { required: true })}
             />
           </div>
           <div className="space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-1">
+            <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">
               User Role
             </label>
             <select
-              className="w-full px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none cursor-pointer text-sm font-bold transition-all text-slate-800"
+              className="w-full px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none cursor-pointer text-sm font-bold transition-all text-slate-800 dark:text-slate-200"
               {...register("role", { required: true })}
             >
               <option value="student">Student</option>
@@ -152,11 +152,11 @@ const Register = () => {
 
         {/* Gender */}
         <div className="space-y-1">
-          <label className="text-[10px] font-black text-slate-500 uppercase ml-1">
+          <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">
             Gender
           </label>
           <div className="flex gap-6 mt-1 ml-2">
-            <label className="flex items-center gap-2 cursor-pointer text-sm font-medium text-slate-700 hover:text-orange-500 transition-colors">
+            <label className="flex items-center gap-2 cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-orange-500 transition-colors">
               <input
                 type="radio"
                 value="male"
@@ -165,7 +165,7 @@ const Register = () => {
               />{" "}
               Male
             </label>
-            <label className="flex items-center gap-2 cursor-pointer text-sm font-medium text-slate-700 hover:text-orange-500 transition-colors">
+            <label className="flex items-center gap-2 cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-orange-500 transition-colors">
               <input
                 type="radio"
                 value="female"
@@ -179,27 +179,27 @@ const Register = () => {
 
         {/* Photo */}
         <div className="space-y-1">
-          <label className="text-[10px] font-black text-slate-500 uppercase ml-1">
+          <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">
             Profile Photo
           </label>
           <input
             type="file"
             accept="image/*"
-            className="file-input file-input-bordered w-full rounded-2xl bg-slate-50 text-sm focus:outline-none transition-all text-slate-800"
+            className="file-input file-input-bordered w-full rounded-2xl bg-slate-50 dark:bg-slate-800 text-sm focus:outline-none transition-all text-slate-800 dark:text-slate-200"
             {...register("photo", { required: true })}
           />
         </div>
 
         {/* Password with Show/Hide */}
         <div className="space-y-1">
-          <label className="text-[10px] font-black text-slate-500 uppercase ml-1">
+          <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase ml-1">
             Password
           </label>
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
               placeholder="••••••••"
-              className="w-full px-5 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none text-sm transition-all text-slate-800"
+              className="w-full px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none text-sm transition-all text-slate-800 dark:text-slate-200"
               {...register("password", { required: true, minLength: 6 })}
             />
             <button
@@ -228,12 +228,12 @@ const Register = () => {
       <button
         type="button"
         onClick={handleGoogleSignIn}
-        className="w-full flex items-center justify-center gap-3 bg-white border border-slate-200 py-3 rounded-2xl hover:bg-slate-50 transition-all font-bold text-slate-700 shadow-sm"
+        className="w-full flex items-center justify-center gap-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 py-3 rounded-2xl hover:bg-slate-50 dark:bg-slate-800 transition-all font-bold text-slate-700 dark:text-slate-300 shadow-sm"
       >
         <FcGoogle size={20} /> Continue with Google
       </button>
 
-      <p className="mt-6 text-center text-sm font-medium text-slate-500">
+      <p className="mt-6 text-center text-sm font-medium text-slate-500 dark:text-slate-400">
         Already have an account?{" "}
         <Link to="/login" className="text-orange-600 font-bold hover:underline">
           Login

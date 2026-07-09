@@ -33,10 +33,10 @@ const Home = () => {
       {isLoading ? (
         <div className="flex flex-col items-center justify-center py-20 gap-4">
           <span className="loading loading-spinner loading-lg text-blue-700"></span>
-          <p className="text-slate-500 font-medium animate-pulse">Finding best tuitions for you...</p>
+          <p className="text-slate-500 dark:text-slate-400 font-medium animate-pulse">Finding best tuitions for you...</p>
         </div>
       ) : isError ? (
-        <div className="text-center py-20 bg-red-50 rounded-3xl mx-4 my-10 border border-red-100">
+        <div className="text-center py-20 bg-red-50 dark:bg-red-900/30 rounded-3xl mx-4 my-10 border border-red-100 dark:border-red-900/50">
           <p className="text-red-500 font-semibold mb-2">Oops! Couldn't load tuitions.</p>
           <button 
             onClick={() => refetch()}

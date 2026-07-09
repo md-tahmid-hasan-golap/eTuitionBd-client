@@ -153,7 +153,7 @@ const Footer = () => {
       {/* Copyright Bottom Bar */}
       <div className="bg-[#0b1221] py-6 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-500 italic">
+          <p className="text-xs text-gray-500 dark:text-gray-400 italic">
             Developed with ❤️ by{" "}
             <a
               href="https://github.com/md-tahmid-hasan-golap"
@@ -169,7 +169,7 @@ const Footer = () => {
             <span className="text-white font-semibold">eTuitionBd</span>. All
             rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-gray-500">
+          <div className="flex gap-6 text-xs text-gray-500 dark:text-gray-400">
             <Link to="/legal-notice" className="hover:text-white">
               Privacy Policy
             </Link>

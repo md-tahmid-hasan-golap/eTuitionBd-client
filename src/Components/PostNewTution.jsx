@@ -76,23 +76,23 @@ const PostNewTuition = () => {
         <h2 className="text-4xl font-black text-[#0f172a] italic uppercase tracking-tighter">
           Post <span className="text-orange-500">New Tuition</span>
         </h2>
-        <p className="text-slate-500 mt-2 font-medium">
+        <p className="text-slate-500 dark:text-slate-400 mt-2 font-medium">
           Fill out the details to find the perfect tutor.
         </p>
       </div>
 
-      <div className="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100">
+      <div className="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-[3rem] shadow-xl border border-slate-100 dark:border-slate-700">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Subject */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1 flex items-center gap-2">
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-2">
                 <FaBookOpen className="text-orange-500" /> Subject
               </label>
               <input
                 type="text"
                 placeholder="e.g. Higher Math, Physics"
-                className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800"
+                className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800 dark:text-slate-200"
                 {...register("subject", { required: "Subject is required" })}
               />
               {errors.subject && (
@@ -104,13 +104,13 @@ const PostNewTuition = () => {
 
             {/* Class */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1 flex items-center gap-2">
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-2">
                 <FaChalkboardTeacher className="text-blue-500" /> Class / Level
               </label>
               <input
                 type="text"
                 placeholder="e.g. Class 10, HSC 1st Year"
-                className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800"
+                className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800 dark:text-slate-200"
                 {...register("class", { required: "Class is required" })}
               />
               {errors.class && (
@@ -121,13 +121,13 @@ const PostNewTuition = () => {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1 flex items-center gap-2">
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-2">
                 <FaMoneyBillWave className="text-emerald-500" /> Salary (BDT)
               </label>
               <input
                 type="number"
                 placeholder="e.g. 5000"
-                className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800"
+                className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800 dark:text-slate-200"
                 {...register("salary", { required: "Salary is required" })}
               />
               {errors.salary && (
@@ -139,13 +139,13 @@ const PostNewTuition = () => {
 
             {/* Location */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1 flex items-center gap-2">
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-2">
                 <FaMapMarkerAlt className="text-red-500" /> Location
               </label>
               <input
                 type="text"
                 placeholder="e.g. Dhanmondi, Dhaka"
-                className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800"
+                className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800 dark:text-slate-200"
                 {...register("location", { required: "Location is required" })}
               />
               {errors.location && (
@@ -157,11 +157,11 @@ const PostNewTuition = () => {
 
             {/* Days per week */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1 flex items-center gap-2">
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-2">
                 <FaCalendarAlt className="text-purple-500" /> Days per week
               </label>
               <select
-                className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800"
+                className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800 dark:text-slate-200"
                 {...register("daysPerWeek", { required: "This is required" })}
               >
                 <option value="3">3 Days/Week</option>
@@ -173,11 +173,11 @@ const PostNewTuition = () => {
 
             {/* Tuition Type */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1 flex items-center gap-2">
+              <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-2">
                 <FaChalkboardTeacher className="text-teal-500" /> Tuition Type
               </label>
               <select
-                className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800"
+                className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800 dark:text-slate-200"
                 {...register("tuitionType", { required: "This is required" })}
               >
                 <option value="Home Tuition">Home Tuition</option>
@@ -188,14 +188,14 @@ const PostNewTuition = () => {
 
           {/* Description */}
           <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1 flex items-center gap-2">
+            <label className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-2">
               <FaAlignLeft className="text-blue-400" /> Requirements /
               Description
             </label>
             <textarea
               rows="4"
               placeholder="Detailed requirements for the tutor..."
-              className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800 resize-none"
+              className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-orange-500 focus:outline-none transition-all font-medium text-slate-800 dark:text-slate-200 resize-none"
               {...register("description", {
                 required: "Description is required",
               })}

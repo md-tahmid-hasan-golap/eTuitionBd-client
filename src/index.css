@@ -2,10 +2,17 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-body{
+body {
     font-family: "Inter", sans-serif;
 
 }
+
+*, *::before, *::after {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+@custom-variant dark (&:is(.dark, .dark *));
+
 
 @plugin "daisyui/theme" {
     name: "light";
@@ -15,3 +22,9 @@ body{
     --color-accent: #ff6652;
 }
 
+@plugin "daisyui/theme" {
+    name: "dark";
+    --color-primary: #fe881b;
+    --color-secondary: #5f3afc;
+    --color-accent: #ff6652;
+}
